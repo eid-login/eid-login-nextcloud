@@ -16,6 +16,9 @@
     </documentation>
     <website>https://eID.services/eidlogin/nextcloud</website>
     <bugs>https://eID.services/eidlogin/nextcloud/bugs</bugs>
+    <screenshot>https://eid.services/assets/img/Title-Nextcloud-de.png</screenshot>
+    <screenshot>https://eid.services/assets/img/nextcloud-appstore/Login-Nextcloud-de.png</screenshot>
+    <screenshot>https://eid.services/assets/img/nextcloud-appstore/Wizard-Nextcloud-de.png</screenshot>
     <namespace>EidLogin</namespace>
     <category>security</category>
     <dependencies>

@@ -5,6 +5,9 @@
 ### Removed
 ### Fixed
 ### Security
+## 1.0.2 – 2021-06-18
+### Changed
+- Set correct version in info.xml
 ## 1.0.1 – 2021-06-18
 ### Added
 - Screenshots in info.xml

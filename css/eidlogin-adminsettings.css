@@ -1,0 +1,159 @@
+/* css for the admin settings of the eidlogin app */
+.toastify.toast {
+	padding-right: 60px;
+}
+#eidlogin-settings {
+  max-width: 1024px;
+}
+#eidlogin-settings-spinner-div img {
+	width: 16px;
+}
+#eidlogin-settings-notls-div p {
+	color: red;
+}
+/* taken from https://stackoverflow.com/a/32086233 */
+#eidlogin-settings nav ul {
+  font-size: 0;
+  padding: 0;
+  overflow: hidden;
+  display: inline-block;
+  border: 1px solid #008cd0;
+}
+#eidlogin-settings nav li {
+  display: inline-block;
+}
+#eidlogin-settings nav a {
+  font-size: 1rem;
+  position: relative;
+  display: inline-block;
+  background: #eee;
+  text-decoration: none;
+  color: #008cd0;
+  padding: 7px 25px 7px 10px;
+  width: 220px;
+  text-align: center;
+}
+@media (max-width: 1290px) {
+  #eidlogin-settings nav a {
+    padding: 7px 0px 7px 0px;
+    width: 160px;
+  }
+}
+#eidlogin-settings nav a:after,
+#eidlogin-settings nav a:before {
+  position: absolute;
+  content: "";
+  height: 0;
+  width: 1px;
+  top: 50%;
+  left: -25px;
+  margin-top: -24px;
+  border: 24px solid #eee;
+  border-right: 0 !important;
+  border-left-color: transparent !important;
+}
+#eidlogin-settings nav a:before {
+  left: -26px;
+  border: 24px solid #eee;
+}
+#eidlogin-settings nav a.active {
+  cursor: default;
+  background: #008cd0;
+  color: #fff;
+}
+#eidlogin-settings nav a.active:after {
+  border-color: #008cd0;
+}
+#eidlogin-settings nav a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+@media (max-width: 1026px) {
+  #eidlogin-settings-wizard-panel-help img {
+    max-width: 300px;
+  }
+}
+#eidlogin-settings-wizard-panel-help img {
+  max-width: 100%;
+  max-height: 100%;
+}
+#eidlogin-settings-button-help {
+  border-color: #dbdbdb !important;
+  border-radius: 60%;
+  cursor: pointer;
+  float: right;
+  position: relative;
+  top: -3em;
+}
+
+#eidlogin-settings-wizard .panel a {
+  color: #008cd0;
+  text-decoration: underline;
+}
+#eidlogin-settings-button-help.active {
+  background-color: #008cd0 !important;
+}
+
+#eidlogin-settings-wizard .panel {
+  border:1px solid #008cd0;
+  padding: 10px;
+  margin: 20px 0px;
+  border-radius: 10px;
+}
+#eidlogin-settings-wizard .panel .row {
+  margin-top: 10px;
+}
+#eidlogin-settings-wizard .panel ul li {
+    list-style-type: disc;
+    margin: 0em 2em;
+}
+#eidlogin-settings-wizard .panel ol li {
+  list-style-type: decimal;
+  margin: 0em 2em;
+}
+#eidlogin-settings-wizard-panel-1 ol li {
+  list-style: none !important; 
+  counter-increment: ov-counter;
+}
+#eidlogin-settings-wizard-panel-1 ol li::before {
+  content: "("counter(ov-counter)") ";
+  font-weight: bold;
+  margin-left: -1.5em;
+}
+#eidlogin-settings-wizard input {
+  width: 100%;
+}
+#eidlogin-settings-wizard textarea {
+	width: 100%;
+	height: 50em;
+}
+#eidlogin-settings-wizard pre {
+  width: 100%;
+  font-size: small;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+#eidlogin-settings-manual-sp {
+	margin-bottom: 4em;
+}
+#eidlogin-settings-manual h3 {
+	margin-top: -1em;
+	margin-bottom: 2em;
+}
+#eidlogin-settings-manual input {
+	margin-bottom: 3em;
+	width: 50em;
+}
+#eidlogin-settings-manual textarea {
+	margin-bottom: 3em;
+	height: 28em;
+	width: 50em;
+}
+
+#eidlogin-settings-manual-div-rollover h4,h5 {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-weight: bold;
+}

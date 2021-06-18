@@ -1,0 +1,11 @@
+.cache
+.php_cs.cache
+build
+cypress/fixtures/example.json
+cypress/videos
+cypress/screenshots
+dep
+js
+node_modules
+vendor
+!**/.gitkeep

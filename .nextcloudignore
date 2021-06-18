@@ -1,0 +1,17 @@
+.cache
+.git
+cypress
+./src
+node_modules
+translationfiles
+.eslintrc.js
+.gitignore
+.nextcloudignore
+.php_cs.cache
+.php_cs.dist
+composer.json
+composer.lock
+cypress.json
+krankerl.toml
+package-lock.json
+package.json

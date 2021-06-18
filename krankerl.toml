@@ -1,0 +1,8 @@
+[package]
+before_cmds = [
+    "composer install",
+    "npm install",
+    "npm run build",
+    "vendor/bin/mozart compose",
+    "composer update --no-dev -n",
+]

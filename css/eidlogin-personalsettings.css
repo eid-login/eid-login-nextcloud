@@ -1,0 +1,17 @@
+/* css for the personal settings of the eidlogin app */
+.toastify.toast {
+  padding-right: 60px;
+}
+
+#eidlogin-settings-hint-eid a {
+  font-weight: bold;
+  color: #000;
+}
+
+#eidlogin-settings-hint-eid a:hover {
+  text-decoration: underline;
+}
+
+#eidlogin-settings-label-no_pw_login {
+  padding: 12px 0;
+}

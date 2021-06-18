@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="dev-master@aa854ae3384fd3c306508d60fb6c86137b654544">
+  <file src="lib/AppInfo/Application.php">
+    <DuplicateClass occurrences="1">
+      <code>Application</code>
+    </DuplicateClass>
+  </file>
+  <file src="lib/Service/EidService.php">
+    <MissingDependency occurrences="30">
+      <code>$eidAttribute</code>
+      <code>$eidAttribute</code>
+      <code>$eidAttribute</code>
+      <code>$this-&gt;attributeMapper</code>
+      <code>$this-&gt;attributeMapper</code>
+      <code>$this-&gt;attributeMapper</code>
+      <code>$this-&gt;continueDataMapper</code>
+      <code>$this-&gt;continueDataMapper</code>
+      <code>$this-&gt;continueDataMapper</code>
+      <code>$this-&gt;responseDataMapper</code>
+      <code>$this-&gt;responseDataMapper</code>
+      <code>$this-&gt;responseDataMapper</code>
+      <code>$this-&gt;userMapper</code>
+      <code>$this-&gt;userMapper</code>
+      <code>$this-&gt;userMapper</code>
+      <code>$this-&gt;userMapper</code>
+      <code>$this-&gt;userMapper</code>
+      <code>$this-&gt;userMapper</code>
+      <code>EidAttribute</code>
+      <code>EidAttributeMapper</code>
+      <code>EidAttributeMapper</code>
+      <code>EidContinueData</code>
+      <code>EidContinueDataMapper</code>
+      <code>EidContinueDataMapper</code>
+      <code>EidResponseData</code>
+      <code>EidResponseDataMapper</code>
+      <code>EidResponseDataMapper</code>
+      <code>EidUser</code>
+      <code>EidUserMapper</code>
+      <code>EidUserMapper</code>
+    </MissingDependency>
+    <UndefinedMethod occurrences="13">
+      <code>getAttribute</code>
+      <code>getAttribute</code>
+      <code>getAttribute</code>
+      <code>getAttribute</code>
+      <code>getAttribute</code>
+      <code>getAttribute</code>
+      <code>hasAttribute</code>
+      <code>hasAttribute</code>
+      <code>hasAttribute</code>
+      <code>insert</code>
+      <code>setName</code>
+      <code>setUid</code>
+      <code>setValue</code>
+    </UndefinedMethod>
+  </file>
+</files>

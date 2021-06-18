@@ -1,0 +1,872 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Nextcloud package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Nextcloud 3.14159\n"
+"Report-Msgid-Bugs-To: translations\\@example.com\n"
+"POT-Creation-Date: 2021-02-01 11:38+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6185
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:49
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:141
+msgid "Edit Advanced Settings"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6186
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:50
+msgid "Hide Advanced Settings"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6187
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:51
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:242
+msgid "Show Service Provider Metadata"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6188
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:52
+msgid "Hide Service Provider Metadata"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6272
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:122
+msgid "Identity Provider settings could not be fetched"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6339
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-personalsettings.js:6232
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:185
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-personalsettings.js:103
+msgid "Settings could not be saved"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6360
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:205
+msgid "Service Provider metadata could not be fetched"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6398
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:244
+msgid ""
+"Changing the Identity Provider Settings will very likely make existing eID "
+"connections not work anymore, as they are bound to a specific Identity "
+"Provider! You maybe should make a backup of the settings before saving! Are "
+"you sure you want to save now?"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6398
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:245
+msgid "Save Settings"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6400
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6407
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6433
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6472
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6507
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-personalsettings.js:6187
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:248
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:259
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:290
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:333
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:373
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-personalsettings.js:57
+msgid "Yes"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6402
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6435
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6474
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6509
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-personalsettings.js:6189
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:250
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:292
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:335
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:375
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-personalsettings.js:59
+msgid "Cancel"
+msgstr ""
+
+msgid "Please confirm that the Service Provider has been registered at the Identity Provider. Pressing the 'Next' button will activate the eID-Login."
+msgstr ""
+
+msgid "Activate eID-Login"
+msgstr ""
+
+msgid "eID-Login could not be activated"
+msgstr ""
+
+msgid "eID-Login is activated"
+msgstr ""
+
+msgid "eID-Login is deactivated"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6405
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:255
+msgid "Should all existing eID connections be deleted?"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6405
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:256
+msgid "Delete existing eID connections"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6409
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:261
+msgid "No"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6430
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:284
+msgid "Settings could not be reset"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6431
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:286
+msgid ""
+"Reset of settings will also delete eID connections of all accounts. After "
+"this no account will be able to use the eID-Login anymore and all users must "
+"create a new eID connection! Are you sure?"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6431
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:287
+msgid "Reset Settings"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6463
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Controller/SettingsController.php:251
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:323
+msgid "Certificate Rollover could not be prepared"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6464
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:324
+msgid ""
+"This will create new certificates which will be propagated in the Service "
+"Provider SAML Metadata. Are you sure?"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6467
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:326
+msgid ""
+"This will replace the already prepared certificates and replace them with new "
+"ones which will be propagated in the Service Provider SAML Metadata. Are you "
+"sure?"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6470
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:330
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:337
+msgid "Prepare Certificate Rollover"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6503
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Controller/SettingsController.php:278
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:366
+msgid "Certificate Rollover could not be executed"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6504
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:367
+msgid ""
+"This will remove the currently used certificates from the Service Provider SAML "
+"Metadata and activate the prepared certificates. Are you sure?"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-adminsettings.js:6505
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-adminsettings.js:370
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:341
+msgid "Activate prepared certificates"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-personalsettings.js:6185
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-personalsettings.js:53
+msgid "After the deletion you will not be able to access your account via eID-Login anymore. Are you sure?"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/js/eidlogin-personalsettings.js:6207
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Controller/EidController.php:126
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/src/eidlogin-personalsettings.js:77
+msgid "Failed to delete the eID connection"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/AppInfo/Application.php:57
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Login/EidLogin.php:42
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Notification/Notifier.php:94
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Settings/AdminSection.php:42
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/specialAppInfoFakeDummyForL10nScript.php:2
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/personalsettings.php:8
+msgid "eID-Login"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Controller/EidController.php:121
+msgid "eID connection has been deleted"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Controller/SettingsController.php:155
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Controller/SettingsController.php:235
+msgid "Settings have been saved"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Controller/SettingsController.php:160
+msgid ", eID connections have been deleted"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Controller/SettingsController.php:210
+msgid "Settings have been reset"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Controller/SettingsController.php:228
+msgid ""
+"Could not disable password based login, as no mail address is set for your "
+"account. But this is required if you want to recover access to the account."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Controller/SettingsController.php:262
+msgid "Certificate Rollover has been prepared"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Controller/SettingsController.php:289
+msgid "Certificate Rollover has been executed"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Notification/Notifier.php:113
+msgid "eID-Login available"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Notification/Notifier.php:114
+msgid "You can use your eID (for example your German identity card) to login to Nextcloud. Connect your eID to your account in the settings now."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Notification/Notifier.php:119
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Notification/Notifier.php:133
+msgid "Go to Settings"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Notification/Notifier.php:127
+msgid "eID-Login configured"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Notification/Notifier.php:128
+msgid ""
+"The eID-Login app has been configured at setup. Please see the eID-Login "
+"Settings page for the data to register the Service at the Identity Provider."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Service/EidService.php:273
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Service/EidService.php:450
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Service/EidService.php:494
+msgid "Creation of eID connection failed! Please ensure the used eID-Card is valid."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Service/EidService.php:274
+msgid "Log in with eID failed! Please ensure the used eID-Card is valid."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Service/EidService.php:350
+msgid "Log in with eID aborted"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Service/EidService.php:351
+msgid "Creation of eID connection aborted"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Service/EidService.php:385
+msgid "eID-Login is not yet set up for your account"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Service/EidService.php:454
+msgid "An eID connection already exists"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Service/EidService.php:463
+msgid "The eID is already connected to another account"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Service/EidService.php:490
+msgid "eID connection has been created"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Settings/AdminSettings.php:203
+msgid "EntityID of the Identity Provider is missing"
+msgstr ""
+
+msgid "Signature Certificate of the Identity Provider is missing"
+msgstr ""
+
+msgid "Signature Certificate of the Identity Provider could not be read"
+msgstr ""
+
+msgid "Signature Certificate of the Identity Provider has an insufficent public key length. The minimal valid key length is "
+msgstr ""
+
+msgid "Encryption Certificate of the Identity Provider could not be read"
+msgstr ""
+
+msgid "Encryption Certificate of the Identity Provider has an insufficent public key length. The minimal valid key length is "
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Settings/AdminSettings.php:208
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Settings/AdminSettings.php:229
+msgid "EntityID of the Service Provider is missing"
+msgstr ""
+
+msgid "For using the SAML Profile according to BSI TR-03130 an Encryption Certificate of the Identity Provider is needed"
+msgstr ""
+
+msgid "AuthnRequestExtension XML element is no valid XML"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Settings/AdminSettings.php:212
+msgid "No valid Single Sign On URL of the Identity Provider"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Settings/AdminSettings.php:214
+msgid "Identity Provider Single Sign On URL must start with https"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/lib/Settings/AdminSettings.php:219
+msgid "Single Sign On URL of the Identity Provider is missing"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/specialAppInfoFakeDummyForL10nScript.php:3
+msgid ""
+"Integration of mobile electronic identities at a substantial security level"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:24
+msgid "To use the eID-Login app, your Nextcloud instance must use TLS!"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:28
+msgid "eID-Login Configuration"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:32
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:74
+msgid "Overview"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:33
+msgid "(1) Select IdP"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:34
+msgid "(2) Configure IdP"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:35
+msgid "(3) Connect eID"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:41
+msgid "Info"
+msgstr ""
+
+msgid "What is the eID-Login App?"
+msgstr ""
+
+msgid "The eID-Login App enables users to login to Nextcloud using an "
+msgstr ""
+
+msgid "eID-Card"
+msgstr ""
+
+msgid ", i.e. the "
+msgstr ""
+
+msgid "eID function"
+msgstr ""
+
+msgid " of the German Identity Card."
+msgstr ""
+
+msgid "For the connection of an eID to their Nextcloud account and the eID based login, users need an "
+msgstr ""
+
+msgid ", this means an application like AusweisApp2 or the Open e-Card App."
+msgstr ""
+
+msgid "By using the German eID card (or another eID) and the associated PIN code the eID-Login provides a secure alternative to the login using username and password."
+msgstr ""
+
+msgid "Important!"
+msgstr ""
+
+msgid "When using the eID-Login App in it`s default configuration, no personal data from the eID card will be read. Only the "
+msgstr ""
+
+msgid "pseudonym function"
+msgstr ""
+
+msgid " of the eID is being used."
+msgstr ""
+
+msgid "If any other data is being read, the user will be informed about it."
+msgstr ""
+
+msgid "Setup with SkIDentity as Identity Provider"
+msgstr ""
+
+msgid "The easiest way to setup the eID-Login App is by using the "
+msgstr ""
+
+msgid " which has been preconfigured for ease of use. For the default setup, which means only using the pseudonym function, no costs incur. The only requirement is the "
+msgstr ""
+
+msgid "registration"
+msgstr ""
+
+msgid " at SkIDentity."
+msgstr ""
+
+msgid "Setup with another Identity Provider"
+msgstr ""
+
+msgid "For the eID-Login any Identity Provider using the SAML protocol for communication with Nextcloud can be used. Beyond that any service providing an eID-Server according to "
+msgstr ""
+
+msgid " (also based on SAML) can be used."
+msgstr ""
+
+msgid "Technical background information"
+msgstr ""
+
+msgid "The eID-Login App uses the SAML protocol, to let users login into Nextcloud via an external service (Identity Provider) using an eID."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:49
+msgid "The SAML protocol defines two major and collaborating entities:"
+msgstr "Das SAML Protokoll definiert die folgenden beiden Entitäten:"
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:52
+msgid "Service Provider (SP):"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:52
+msgid ""
+"An entity which provides any kind of service over the web. In the scope of "
+"the eID-Login App this is your Nextcloud instance, which contains a SAML "
+"Service Provider component."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:53
+msgid "Identity Provider (IdP):"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:53
+msgid ""
+"An entity which authenticates the User and returns a corresponding assertion "
+"to the Service Provider. In the scope of the eID-Login App this can be "
+"any standard compliant SAML Identity Provider which supports eID-based "
+"authentication, for example the"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:56
+msgid "The eID-Login procedure comprises the following steps:"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:58
+msgid "The User initiates the login procedure at the Service Provider."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:59
+msgid ""
+"The Service Provider creates a SAML authentication request (<AuthnRequest>) "
+"and sends it together with the User via redirect to the Identity Provider."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:60
+msgid ""
+"The Identity Provider authenticates the User using her eID via an eID-Client."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:61
+msgid ""
+"The Identity Provider returns the result of the authentication procedure to "
+"the Service Provider (<Response>)."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:62
+msgid ""
+"The Service Provider validates the provided response and logs in the User in "
+"case of success."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:69
+msgid "Close"
+msgstr ""
+
+msgid "The eID-Login App offers an alternative way of login for the registered users of your Nextcloud instance, using their electronic identity ("
+msgstr ""
+
+msgid "). For example the German eID can then be used for a secure login."
+msgstr ""
+
+msgid "Setup of the eID-Login App consists of three steps:"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:81
+msgid "Select Identity Provider"
+msgstr ""
+
+msgid "For the usage of the eID-Login App a service which makes the eID accessible is needed. This service is called"
+msgstr ""
+
+msgid " or in short "
+msgstr ""
+
+msgid " . You can choose to use the preconfigured "
+msgstr ""
+
+msgid " service or select another service."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:84
+msgid "Configuration at the Identity Provider"
+msgstr ""
+
+msgid "At the Identity Provider your Nextcloud instance, which serves as"
+msgstr ""
+
+msgid ", must be registered. The process of registration depends on the respective Identity Provider. The information needed for registration is provided in step 2."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:87
+msgid "Connect eID"
+msgstr ""
+
+msgid "In order to use a German eID ('Personalausweis') or another eID for the login at Nextcloud, the eID must be connected to an user account."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:96
+msgid "Continue with SkIDentity"
+msgstr ""
+
+msgid "Please click on the (?) icon for help regarding the setup or more information."
+msgstr ""
+
+msgid "Continue with another IdP"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:102
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:148
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:253
+msgid "Next"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:109
+msgid "Select Identity Provider"
+msgstr ""
+
+msgid "Select an Identity Provider. It must support the SAML protocol."
+msgstr ""
+
+msgid "Insert the Identity Providers Metadata URL in the respective form field and assign an Entity ID, which must be used for the configuration of the Identity Provider in the next step."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:112
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:296
+msgid "Service Provider EntityID"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:117
+msgid "Usually the domain of your Nextcloud instance is used."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:122
+msgid "Identity Provider Metadata URL"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:127
+msgid "When inserting the Metadata URL, the values in the advanced settings will be updated. Alternatively the advanced settings can be inserted by hand."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:133
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:309
+msgid "Enforce encryption of SAML assertions (Check only if the selected Identity Provider supports this feature!)"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:145
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:250
+msgid "Back"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:153
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:313
+msgid "Advanced Settings"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:156
+msgid "Identity Provider EntityID"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:166
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:318
+msgid "Identity Provider Single Sign On URL"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:171
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:317
+msgid ""
+"URL of the Identity Provider to which the SAML authentication request will "
+"be sent."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:176
+msgid "Signature certificate of the Identity Provider"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:181
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:320
+msgid "Certificate to validate the signature of the authentication response."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:191
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:323
+msgid "Certificate to encrypt the authentication request. Omitting the element means that the SAML requests are not encrypted."
+msgstr ""
+
+msgid ""
+"AuthnRequestExtension XML element"
+msgstr ""
+
+msgid ""
+"For a connection according to "
+msgstr ""
+
+msgid ""
+" the corresponding AuthnRequestExtension XML element must be inserted here."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:199
+msgid "Now go to the selected Identity Provider and use the following data to register the Service Provider there:"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:210
+msgid "You have selected SkIDentity. Click the button to the right to go to SkIDentity."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:213
+msgid "Open SkIDentity"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:258
+msgid "Service Provider Metadata"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:259
+msgid "The metadata as provided by the Service Provider at the URL "
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:267
+msgid "Connect eID"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:268
+msgid "To use the eID-Login, the eID must be connected to the user account. For this you need an eID-Card, like the German eID, a suitable cardreader and an active eID-Client (for example"
+msgstr ""
+
+msgid " or "
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:271
+msgid "After establishing the connection the eID-Login can be used with the button on the login page."
+msgstr ""
+
+msgid "You can connect your account with an eID now. This step is optional and can be done and reverted any time later in your personal settings under the security section."
+msgstr ""
+
+msgid "Please note:"
+msgstr ""
+
+msgid "After connecting the eID or finishing the wizard, this page will show a form for direct access to the eID-Login settings. To use the wizard again, reset the settings of the eID-Login App."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:275
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/personalsettings.php:15
+msgid "Create connection to eID"
+msgstr ""
+
+msgid "Finish wizard"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:284
+msgid "eID-Login - Settings"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:293
+msgid "Service Provider Settings"
+msgstr ""
+
+msgid ""
+"If the eID-Login is activated, the eID-Login button is shown and users can edit eID connections."
+msgstr ""
+
+msgid "Please Note: Required values in the following form are labeled with an *"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:295
+msgid ""
+"EntityID of the Service Provider as configured at the Identity Provider."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:298
+msgid ""
+"Assertion Consumer URL is determined by the domain of your Service Provider "
+"and cannot be changed. Use this value to configure the Service Provider at "
+"the Identity Provider."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:299
+msgid "Assertion Consumer URL"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:301
+msgid ""
+"SAML Metadata URL is determined by the domain of your Service Provider and "
+"cannot be changed. Use this value to configure the Service Provider at the "
+"Identity Provider."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:302
+msgid "SAML Metadata URL"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:305
+msgid ""
+"Only accept encrypted SAML assertions from the Identity Provider. This must "
+"be supported by the Identity Provider."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:315
+msgid "EntityID of the Identity Provider"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:321
+msgid "Signature Certificate of the Identity Provider"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:324
+msgid "Encryption Certificate of the Identity Provider"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:327
+msgid "Save"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:328
+msgid "Reset"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:331
+msgid "SAML Certificate Rollover"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:332
+msgid "The active certificates expire in "
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:332
+msgid " days. For a regular certificate rollover no action is required. The rollover will be done automatically. But you always have the option to do a manual rollover, if needed."
+msgstr ""
+
+msgid "Current certificates:"
+msgstr ""
+
+msgid ""
+"The currently active certificate ends with:"
+msgstr ""
+
+msgid ""
+"The newly prepared certificate, which is not yet active, ends with:"
+msgstr ""
+
+msgid ""
+"Signature"
+msgstr ""
+
+msgid ""
+"Encryption"
+msgstr ""
+
+msgid ""
+"No new certificate prepared yet."
+msgstr ""
+
+msgid "Manual Certificate Rollover"
+msgstr ""
+
+msgid "(1) Certificate Rollover Preparation"
+msgstr ""
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:334
+msgid "In a first step new certificates will be created, which will be in the state"
+msgstr "In einem ersten Schritt werden neue Zertifikate erzeugt, welche den Status"
+
+msgid "prepared"
+msgstr "vorbereitet"
+
+msgid "but not activated."
+msgstr "haben, aber noch nicht aktiviert sind."
+
+msgid ""
+"After some time the Identity Provider should have noticed the presence of the new certificates or you must explicitly inform the Identity Provider about them. "
+"After this has happened the rollover can be executed."
+msgstr ""
+
+msgid "(2) Activation of prepared certificates"
+msgstr "(2) Aktivierung der vorbereiteten Zertifikate"
+
+msgid ""
+"The activation of the new certificates will happen automatically after some time, but can also be done by clicking the button below."
+msgstr ""
+
+msgid ""
+"CAUTION: Only do this step manually, if you have made sure that the prepared certificates have been successfully configured at the Identity Provider or there are other important reasons to change the certificates immediately."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:342
+msgid "The button is only active if the rollover has been prepared already!"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/personalsettings.php:13
+msgid "Your account is currently not connected to your eID. Create a connection to use your German eID ('Personalausweis') or another eID for the login to Nextcloud. More information can be found in the "
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/personalsettings.php:14
+msgid "Your account is currently connected to your eID. By default you can use Username and Password or eID to login. Activate the following option, to prevent the login by username and password and enhance the security of your account."
+msgstr ""
+
+msgid "Disable password based login. This will be unset if you use the password recovery."
+msgstr ""
+
+msgid "Click the following button to delete the eID connection."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/personalsettings.php:16
+msgid "Delete connection to eID"
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/personalsettings.php:22
+msgid ""
+"Disable password based login for your account to ensure higher security. "
+"This will be unset if you use the password recovery."
+msgstr ""
+
+#: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/personalsettings.php:29
+msgid ""
+"The eID-Login app is not activated! Please contact the administrator!"
+msgstr ""

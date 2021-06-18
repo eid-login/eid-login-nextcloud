@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<psalm
+    errorLevel="4"
+    resolveFromConfigFile="true"
+    errorBaseline="psalm-baseline.xml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config"
+>
+    <projectFiles>
+        <directory name="lib" />
+        <ignoreFiles>
+            <directory name="vendor" />
+            <directory name="dep" />
+        </ignoreFiles>
+    </projectFiles>
+    <issueHandlers>
+        <UndefinedClass>
+            <errorLevel type="suppress">
+                <referencedClass name="OC*" />
+            </errorLevel>
+        </UndefinedClass>
+        <UndefinedDocblockClass>
+            <errorLevel type="suppress">
+                <referencedClass name="OC*" />
+                <referencedClass name="Doctrine\DBAL\Schema\Schema" />
+                <referencedClass name="Doctrine\DBAL\Schema\SchemaException" />
+                <referencedClass name="Doctrine\DBAL\Driver\Statement" />
+                <referencedClass name="Doctrine\DBAL\Schema\Table" />
+                <referencedClass name="Doctrine\DBAL\Types\Type" />
+            </errorLevel>
+        </UndefinedDocblockClass>
+    </issueHandlers>
+</psalm>

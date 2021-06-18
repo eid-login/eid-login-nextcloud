@@ -1,0 +1,44 @@
+{
+    "name": "eid-login/eid-login-nextcloud",
+    "description": "The eID-Login App for Nextcloud allows to use the German eID-card and similar electronic identity documents for secure and privacy-friendly login to Nextcloud. For this purpose, a so-called eID-Client, such as the AusweisApp2 or the Open eCard App and eID-Service are required. In the default configuration a suitable eID-Service is provided without any additional costs.",
+    "type": "nextcloud-app",
+    "license": "AGPL",
+    "authors": [
+        {
+            "name": "ecsec GmbH"
+        }
+    ],
+    "minimum-stability": "dev",
+    "config": {
+      "discard-changes": true
+    },
+    "autoload": {
+      "psr-4": {
+        "Ecsec\\Eidlogin\\Dep\\": "dep"
+      }
+    },
+    "require": {
+        "eid-login/php-saml": "1.0.0"
+    },
+    "require-dev": {
+        "nextcloud/coding-standard": "^0.3.0",
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "coenjacobs/mozart": "^0.7.1",
+        "vimeo/psalm": "^4.7.2"
+    },
+    "scripts": {
+        "lint": "vendor/bin/php-cs-fixer fix --dry-run",
+        "format": "vendor/bin/php-cs-fixer fix"
+    },
+    "extra": {
+        "mozart": {
+            "dep_namespace": "Ecsec\\Eidlogin\\Dep\\",
+            "dep_directory": "/dep/",
+            "classmap_directory": "/dep/classes/",
+            "classmap_prefix": "EE_",
+            "packages": [
+                "eid-login/php-saml"
+            ]
+        }
+    }
+}

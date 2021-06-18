@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <id>eidlogin</id>
+    <name>eID-Login</name>
+    <summary>Integration of mobile electronic identities at a substantial security level</summary>
+    <description lang="en"><![CDATA[The eID-Login App allows to use the German eID-card and similar electronic identity documents for secure and privacy-friendly login to Nextcloud. For this purpose, a so-called eID-Client, such as the AusweisApp2 or the Open eCard App and eID-Service are required. In the default configuration a suitable eID-Service is provided without any additional costs.]]></description>
+    <description lang="de"><![CDATA[Mit der eID-Login App kann die Online-Ausweisfunktion (u.a. vom Personalausweis) für eine sichere und datenschutzfreundliche Anmeldung an Nextcloud verwendet werden. Hierfür wird auf dem System des Benutzers ein so genannter eID-Client, wie z.B. die AusweisApp2 oder die Open eCard App, und ein eID-Service benötigt. In der Standardkonfiguration steht ein geeigneter eID-Service kostenfrei zur Verfügung.]]></description>
+    <version>1.0.0</version>
+    <licence>agpl</licence>
+    <author mail="eID-Login@ecsec.de" homepage="https://ecsec.de">ecsec GmbH</author>
+    <documentation>
+        <user>https://eID.services/eidlogin/nextcloud/userdocs?lang=en</user>
+        <admin>https://eID.services/eidlogin/nextcloud/admindocs?lang=en</admin>
+        <developer>https://eID.services/eidlogin/nextcloud/devdocs?lang=en</developer>
+    </documentation>
+    <website>https://eID.services/eidlogin/nextcloud</website>
+    <bugs>https://eID.services/eidlogin/nextcloud/bugs</bugs>
+    <namespace>EidLogin</namespace>
+    <category>security</category>
+    <dependencies>
+        <nextcloud min-version="19" max-version="21"/>
+        <php min-version="7.3" min-int-size="64"/>
+        <lib>openssl</lib>
+        <database min-version="11.9">pgsql</database>
+        <database min-version="8">mysql</database>
+    </dependencies>
+    <settings>
+        <admin>OCA\EidLogin\Settings\AdminSettings</admin>
+        <admin-section>OCA\EidLogin\Settings\AdminSection</admin-section>
+        <personal>OCA\EidLogin\Settings\PersonalSettings</personal>
+    </settings>
+    <repair-steps>
+        <install>
+            <step>OCA\EidLogin\Migration\InstallRepairStep</step>
+        </install>
+        <uninstall>
+            <step>OCA\EidLogin\Migration\UninstallRepairStep</step>
+        </uninstall>
+    </repair-steps>
+</info>

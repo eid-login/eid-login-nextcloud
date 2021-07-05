@@ -1,6 +1,6 @@
 # eID-Login for Nextcloud
 This is the eID-Login app for the [Nextcloud](https://nextcloud.com) platform.
-It has been developed by [ecsec](https://ecsec.com) on behalf of the [Federal Office for Information Security](https://www.bsi.bund.de/).
+It has been developed by [ecsec](https://ecsec.de) on behalf of the [German Federal Office for Information Security](https://www.bsi.bund.de/).
 
 The eID-Login App allows to use the German eID-card and similar electronic identity documents for secure and privacy-friendly login to Nextcloud. For this purpose, a so-called eID-Client, such as the AusweisApp2 or the Open eCard App and eID-Service are required. In the default configuration a suitable eID-Service is provided without any additional costs.
 

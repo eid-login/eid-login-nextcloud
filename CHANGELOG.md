@@ -5,6 +5,7 @@
 ### Removed
 ### Fixed
 - Set empty strings as default values for settings 'activated' and 'idp_metadata_url' to prevent php notices
+- Fix database migration for NC19 use
 ### Security
 ## 1.0.2 – 2021-06-18
 ### Changed

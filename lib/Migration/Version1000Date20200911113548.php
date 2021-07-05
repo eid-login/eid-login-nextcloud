@@ -11,7 +11,6 @@ declare(strict_types=1);
 namespace OCA\EidLogin\Migration;
 
 use Closure;
-use Doctrine\DBAL\Types\Types;
 use OCP\DB\ISchemaWrapper;
 use OCP\Migration\IOutput;
 use OCP\Migration\SimpleMigrationStep;
@@ -36,23 +35,41 @@ class Version1000Date20200911113548 extends SimpleMigrationStep {
 	 * @return null|ISchemaWrapper
 	 */
 	public function changeSchema(IOutput $output, Closure $schemaClosure, array $options) {
+
+		// TODO Remove this construct when dropping NC19
+		$typeBIGINT = '';
+		$typeSTRING = '';
+		$typeTEXT = '';
+		$typeINTEGER = '';
+		if (substr(\OC_Util::getVersionString(),0,2)==='19') {
+			$typeBIGINT = \Doctrine\DBAL\Types\Type::BIGINT;
+			$typeSTRING = \Doctrine\DBAL\Types\Type::STRING;
+			$typeTEXT = \Doctrine\DBAL\Types\Type::TEXT;
+			$typeINTEGER = \Doctrine\DBAL\Types\Type::INTEGER;
+		} else {
+			$typeBIGINT = \Doctrine\DBAL\Types\Types::BIGINT;
+			$typeSTRING = \Doctrine\DBAL\Types\Types::STRING;
+			$typeTEXT = \Doctrine\DBAL\Types\Types::TEXT;
+			$typeINTEGER = \Doctrine\DBAL\Types\Types::INTEGER;
+		}
+
 		/** @var ISchemaWrapper $schema */
 		$schema = $schemaClosure();
 
 		if (!$schema->hasTable('eidlogin_eid_users')) {
 			$table = $schema->createTable('eidlogin_eid_users');
-			$table->addColumn('id', Types::BIGINT, [
+			$table->addColumn('id', $typeBIGINT, [
 				'autoincrement' => true,
 				'notnull' => true,
 				'length' => 8
 			]);
 			$table->setPrimaryKey(['id']);
-			$table->addColumn('eid', Types::STRING, [
+			$table->addColumn('eid', $typeSTRING, [
 				'notnull' => true,
 				'length' => 64,
 			]);
 			$table->addUniqueIndex(['eid'], 'eidlogin_eid_index');
-			$table->addColumn('uid', Types::STRING, [
+			$table->addColumn('uid', $typeSTRING, [
 				'notnull' => true,
 				'length' => 64,
 			]);
@@ -61,59 +78,59 @@ class Version1000Date20200911113548 extends SimpleMigrationStep {
 
 		if (!$schema->hasTable('eidlogin_eid_attributes')) {
 			$table = $schema->createTable('eidlogin_eid_attributes');
-			$table->addColumn('id', Types::BIGINT, [
+			$table->addColumn('id', $typeBIGINT, [
 				'autoincrement' => true,
 				'notnull' => true,
 				'length' => 8
 			]);
 			$table->setPrimaryKey(['id']);
-			$table->addColumn('uid', Types::STRING, [
+			$table->addColumn('uid', $typeSTRING, [
 				'notnull' => true,
 				'length' => 64
 			]);
-			$table->addColumn('name', Types::STRING, [
+			$table->addColumn('name', $typeSTRING, [
 				'notnull' => true,
 				'length' => 255,
 			]);
-			$table->addColumn('value', Types::TEXT, [
+			$table->addColumn('value', $typeTEXT, [
 				'notnull' => true,
 			]);
 		}
 
 		if (!$schema->hasTable('eidlogin_eid_continuedata')) {
 			$table = $schema->createTable('eidlogin_eid_continuedata');
-			$table->addColumn('id', Types::BIGINT, [
+			$table->addColumn('id', $typeBIGINT, [
 				'autoincrement' => true,
 				'length' => 8
 			]);
 			$table->setPrimaryKey(['id']);
-			$table->addColumn('uid', Types::STRING, [
+			$table->addColumn('uid', $typeSTRING, [
 				'notnull' => true,
 				'length' => 64
 			]);
-			$table->addColumn('value', Types::TEXT, [
+			$table->addColumn('value', $typeTEXT, [
 				'notnull' => true,
 			]);
-			$table->addColumn('time', Types::INTEGER, [
+			$table->addColumn('time', $typeINTEGER, [
 				'notnull' => true,
 			]);
 		}
 
 		if (!$schema->hasTable('eidlogin_eid_responsedata')) {
 			$table = $schema->createTable('eidlogin_eid_responsedata');
-			$table->addColumn('id', Types::BIGINT, [
+			$table->addColumn('id', $typeBIGINT, [
 				'autoincrement' => true,
 				'length' => 8
 			]);
 			$table->setPrimaryKey(['id']);
-			$table->addColumn('uid', Types::STRING, [
+			$table->addColumn('uid', $typeSTRING, [
 				'notnull' => true,
 				'length' => 64
 			]);
-			$table->addColumn('value', Types::TEXT, [
+			$table->addColumn('value', $typeTEXT, [
 				'notnull' => true,
 			]);
-			$table->addColumn('time', Types::INTEGER, [
+			$table->addColumn('time', $typeINTEGER, [
 				'notnull' => true,
 			]);
 		}

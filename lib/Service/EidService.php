@@ -570,7 +570,6 @@ class EidService {
 					$rememberLogin = false;
 				}
 				$this->userSession->createSessionToken($request, $uid, $uid, null, $tokenType);
-				$this->userSession->updateTokens($uid, '');
 				//https://github.com/nextcloud/server/blob/stable19/lib/private/Authentication/Login/SetUserTimezoneCommand.php
 				//TODO also send the users timezone and process it here
 				//https://github.com/nextcloud/server/blob/stable19/lib/private/Authentication/Login/FinishRememberedLoginCommand.php

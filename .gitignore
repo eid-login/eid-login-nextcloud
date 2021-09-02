@@ -1,4 +1,3 @@
-.cache
 .php_cs.cache
 build
 cypress/fixtures/example.json

@@ -1,4 +1,3 @@
-.cache
 .git
 cypress
 ./src
@@ -15,3 +14,4 @@ cypress.json
 krankerl.toml
 package-lock.json
 package.json
+webpack.config.js

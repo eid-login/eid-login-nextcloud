@@ -2,6 +2,7 @@
 ### Added
 - Support for Nextcloud 22
 ### Changed
+- Update JS dependencies
 ### Deprecated
 ### Removed
 - Support for Nextcloud 19

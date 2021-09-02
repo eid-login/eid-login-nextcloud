@@ -27,7 +27,7 @@
 		"@nextcloud/browserslist-config": "^2.1.0",
 		"@nextcloud/eslint-plugin": "^1.5.0",
 		"css-loader": "^6.2.0",
-		"cypress": "^7.4.0",
+		"cypress": "^8.1.3",
 		"cypress-wait-until": "^1.7.1",
 		"eslint": "^7.26.0",
 		"eslint-plugin-nextcloud": "^0.3.0",

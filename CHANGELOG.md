@@ -6,6 +6,7 @@
 ### Removed
 - Support for Nextcloud 19
 ### Fixed
+- Composer dependencies must now be stable
 ### Security
 
 ## 1.0.3 – 2021-07-09

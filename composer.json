@@ -8,7 +8,6 @@
             "name": "ecsec GmbH"
         }
     ],
-    "minimum-stability": "dev",
     "config": {
       "discard-changes": true
     },

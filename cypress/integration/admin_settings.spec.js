@@ -249,7 +249,7 @@ describe('admin related eID stuff', () => {
     cy.get('#body-settings > div.oc-dialog > div.oc-dialog-buttonrow.twobuttons > button.error.primary').click()
     expect(cy.get('.toast-error').length,2);
     cy.get('.toast-close').click({ multiple: true });
-    // filling idp_cert_sign and idp_cert_enc incorrectly
+    // filling idp_cert_sign and idp_cert_enc correctly
     cy.get(`${prefix}form-manual-idp_cert_sign`).clear()
     cy.get(`${prefix}form-manual-idp_cert_sign`).fill('MIIFlzCCA3+gAwIBAgIIUxbcS/Bb6QcwDQYJKoZIhvcNAQELBQAwYzELMAkGA1UEBhMCREUxDzANBgNVBAgTBkJheWVybjERMA8GA1UEBxMITWljaGVsYXUxEzARBgNVBAoTCmVjc2VjIEdtYkgxGzAZBgNVBAMTElNrSURlbnRpdHkgU0FNTCBGUzAeFw0yMDAxMTMxMDAwMDBaFw0yMjAxMTMxMDAwMDBaMGMxCzAJBgNVBAYTAkRFMQ8wDQYDVQQIEwZCYXllcm4xETAPBgNVBAcTCE1pY2hlbGF1MRMwEQYDVQQKEwplY3NlYyBHbWJIMRswGQYDVQQDExJTa0lEZW50aXR5IFNBTUwgRlMwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQCgSraq4/BaSD+8tPKKsez/Uk6FZ2c4cxSzjvcZptVPo7IH2cdLRKnlVfVgLPoeV+MOL/viu1y6IPp6aEJ09vl/7V0P5oEZ9BJ41K6DVsBb/puiFOC/Ma6Q53DbHbZQJJdGPmX1RH297e420iYs19zH7Y98X+ZTVOlOIxc26/yubc6XiMPvGzIv5BsHYzfyLFdapV/PTj21BDUmhas/H83zJP1IGdurJOt8/u7T1Mg2haLlU+Vp1xdeSaZgk+iesRyIB3Y774s6jqavxkit9PHk+Qq166sW2NOQLtb/BR/1aVK5rvvQqrZ0cLnk2jCFyDht4kZ7O6T5C0seQXDOGKHacv6neqfLu+4lWOTpZk/ANrbd8d2oG98k8lc5j2agVC7PjM0lTRoEMedTfG7J4q4mgSKhlL+YrRhIb/nYUSScn0EiAr32YSb5caboT3+eiqXnzAqVbH/wtwXIpbTkgQEwlk6A/TkDhv9+ssDv75k4PUKWmFjUKrC/TUQmC5k8TXvO40NX2cGOVimTavN1fSe1Pj1ytmQXRrbfrKiNwz+EbhAJHTdkEHh40XwjJh2jvwSSctvs3vpVIAtX4FPtHTOraBCZyyH0X/1vtKRruY2VzO8kAeU2Zb4NWE2STmFSXbIG9Pyci9eqdtd5nr3GaPj4g8BabcmMweOJRWwqm8F3fwIDAQABo08wTTAdBgNVHQ4EFgQUPSTV0I2z0mB0eJ/2JPvLPb4UVxswHwYDVR0jBBgwFoAUPSTV0I2z0mB0eJ/2JPvLPb4UVxswCwYDVR0PBAQDAgSQMA0GCSqGSIb3DQEBCwUAA4ICAQCbquW0L2qylIajQ0IelyVQhhAQPc2Eu8ZYequg2OGWHD/LnMyQxEX7eCiIEXTy92+B1Yw9BWVPQo2LvIgzwNAOFaepbdZJCa9CfuI5BEJUlX4QlGZWMfoFIhT08//Z1op+ru4FeQEZwH6fVJqotTnxkpmjbAOMrC5UVpADqBoIoRdS0IaWjW2mN6Gt9G0priQxmgV3FC8n4dhYUgyndOG9ImYkgxtRwHGnk0SC/N6b3PMZxAccxDKBfY0vxAsg3Hktshc5LF2OW08o9Uji/w6OHvSL4uYVGkPOot6u1wncKsz8bQyt7Sj+Tx3nNdqjNciZsd11i9YlIlI0DmLCb4cq61P1AAAZY4d9ah0NdfWLNBUdeER4qnOahdwJXQXdMGkc4FNF4gx7gczGG4vrMKHgn8v2jxEuAhNHVbBGSi0JwO/eK/p8nFW8y/3SgXIWhL+efS4DWYcYhVKU7izAgj0fnnF/flUkaJjTH+rSgzQK/QISYplzSGPa0+bri/kxvxx1Q1VwPI1hpFAS/o9pFuANlNeBD6x26HZYJPK7Leg9/sQ+IAgkS8KR+GInyaZ285A1QNmBy7MmVU304WM6fiZ9+Osbi7n7aK6+BFbKFnhnVRTp4C7Vp3xCXut6z62q0BuxfiHvrYgA5X2HxPRuTjb+beHkiLq7VOb9AW8cPI4wHw==')
     cy.get(`${prefix}form-manual-idp_cert_enc`).clear()
@@ -259,14 +259,18 @@ describe('admin related eID stuff', () => {
     cy.get('#body-settings > div.oc-dialog > div.oc-dialog-buttonrow.twobuttons > button.error.primary').click()
     expect(cy.get('.toast-success').length,1);
     cy.get('.toast-close').click({ multiple: true });
-    // filling idp_ext_tr03130 incorrectly
+    // filling idp_ext_tr03130 incorrectly with missing idp_cert_enc and missing sp_enforce_enc
+    cy.get(`${prefix}form-manual-sp_enforce_enc`).uncheck({force: true})
+    cy.get(`${prefix}form-manual-idp_cert_enc`).clear()
     cy.get(`${prefix}form-manual-idp_ext_tr03130`).type('foobar')
     cy.get(`${prefix}button-manual-save`).click()
     cy.get('#body-settings > div.oc-dialog > div.oc-dialog-buttonrow.twobuttons > button.error.primary').click()
     cy.get('#body-settings > div.oc-dialog > div.oc-dialog-buttonrow.twobuttons > button.error.primary').click()
-    expect(cy.get('.toast-error').length,1);
+    expect(cy.get('.toast-error').length,3);
     cy.get('.toast-close').click({ multiple: true });
     // filling idp_ext_tr03130 correctly (well, it is xml)
+    cy.get(`${prefix}form-manual-sp_enforce_enc`).check({force: true})
+    cy.get(`${prefix}form-manual-idp_cert_enc`).fill('MIIFlzCCA3+gAwIBAgIIUxbcS/Bb6QcwDQYJKoZIhvcNAQELBQAwYzELMAkGA1UEBhMCREUxDzANBgNVBAgTBkJheWVybjERMA8GA1UEBxMITWljaGVsYXUxEzARBgNVBAoTCmVjc2VjIEdtYkgxGzAZBgNVBAMTElNrSURlbnRpdHkgU0FNTCBGUzAeFw0yMDAxMTMxMDAwMDBaFw0yMjAxMTMxMDAwMDBaMGMxCzAJBgNVBAYTAkRFMQ8wDQYDVQQIEwZCYXllcm4xETAPBgNVBAcTCE1pY2hlbGF1MRMwEQYDVQQKEwplY3NlYyBHbWJIMRswGQYDVQQDExJTa0lEZW50aXR5IFNBTUwgRlMwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQCgSraq4/BaSD+8tPKKsez/Uk6FZ2c4cxSzjvcZptVPo7IH2cdLRKnlVfVgLPoeV+MOL/viu1y6IPp6aEJ09vl/7V0P5oEZ9BJ41K6DVsBb/puiFOC/Ma6Q53DbHbZQJJdGPmX1RH297e420iYs19zH7Y98X+ZTVOlOIxc26/yubc6XiMPvGzIv5BsHYzfyLFdapV/PTj21BDUmhas/H83zJP1IGdurJOt8/u7T1Mg2haLlU+Vp1xdeSaZgk+iesRyIB3Y774s6jqavxkit9PHk+Qq166sW2NOQLtb/BR/1aVK5rvvQqrZ0cLnk2jCFyDht4kZ7O6T5C0seQXDOGKHacv6neqfLu+4lWOTpZk/ANrbd8d2oG98k8lc5j2agVC7PjM0lTRoEMedTfG7J4q4mgSKhlL+YrRhIb/nYUSScn0EiAr32YSb5caboT3+eiqXnzAqVbH/wtwXIpbTkgQEwlk6A/TkDhv9+ssDv75k4PUKWmFjUKrC/TUQmC5k8TXvO40NX2cGOVimTavN1fSe1Pj1ytmQXRrbfrKiNwz+EbhAJHTdkEHh40XwjJh2jvwSSctvs3vpVIAtX4FPtHTOraBCZyyH0X/1vtKRruY2VzO8kAeU2Zb4NWE2STmFSXbIG9Pyci9eqdtd5nr3GaPj4g8BabcmMweOJRWwqm8F3fwIDAQABo08wTTAdBgNVHQ4EFgQUPSTV0I2z0mB0eJ/2JPvLPb4UVxswHwYDVR0jBBgwFoAUPSTV0I2z0mB0eJ/2JPvLPb4UVxswCwYDVR0PBAQDAgSQMA0GCSqGSIb3DQEBCwUAA4ICAQCbquW0L2qylIajQ0IelyVQhhAQPc2Eu8ZYequg2OGWHD/LnMyQxEX7eCiIEXTy92+B1Yw9BWVPQo2LvIgzwNAOFaepbdZJCa9CfuI5BEJUlX4QlGZWMfoFIhT08//Z1op+ru4FeQEZwH6fVJqotTnxkpmjbAOMrC5UVpADqBoIoRdS0IaWjW2mN6Gt9G0priQxmgV3FC8n4dhYUgyndOG9ImYkgxtRwHGnk0SC/N6b3PMZxAccxDKBfY0vxAsg3Hktshc5LF2OW08o9Uji/w6OHvSL4uYVGkPOot6u1wncKsz8bQyt7Sj+Tx3nNdqjNciZsd11i9YlIlI0DmLCb4cq61P1AAAZY4d9ah0NdfWLNBUdeER4qnOahdwJXQXdMGkc4FNF4gx7gczGG4vrMKHgn8v2jxEuAhNHVbBGSi0JwO/eK/p8nFW8y/3SgXIWhL+efS4DWYcYhVKU7izAgj0fnnF/flUkaJjTH+rSgzQK/QISYplzSGPa0+bri/kxvxx1Q1VwPI1hpFAS/o9pFuANlNeBD6x26HZYJPK7Leg9/sQ+IAgkS8KR+GInyaZ285A1QNmBy7MmVU304WM6fiZ9+Osbi7n7aK6+BFbKFnhnVRTp4C7Vp3xCXut6z62q0BuxfiHvrYgA5X2HxPRuTjb+beHkiLq7VOb9AW8cPI4wHw==')
     cy.get(`${prefix}form-manual-idp_ext_tr03130`).clear()
     cy.get(`${prefix}form-manual-idp_ext_tr03130`).type('<foo>bar</foo>')
     cy.get(`${prefix}button-manual-save`).click()
@@ -279,6 +283,7 @@ describe('admin related eID stuff', () => {
     cy.get('.eidlogin-login-button').should('be.visible')
   });
 
+  /*
   it('reset settings', () => {
     cy.task('dbSeed')
     cy.visit('/settings/admin/eidlogin');
@@ -322,4 +327,5 @@ describe('admin related eID stuff', () => {
     cy.logout();
     cy.get('.eidlogin-login-button').should('be.visible')
   });
+  */
 });

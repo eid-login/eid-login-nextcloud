@@ -61,6 +61,7 @@ OC.L10N.register(
     "Encryption Certificate of the Identity Provider has an insufficent public key length. The minimal valid key length is " : "Verschlüsselungszertifikat des Identity Providers beinhaltet einen öffentlichen Schlüssel unzureichender Länge. Die minimal gültige Schlüssellänge ist ",
     "EntityID of the Service Provider is missing" : "EntityID des Service Providers fehlt",
     "For using the SAML Profile according to BSI TR-03130 an Encryption Certificate of the Identity Provider is needed" : "Um das SAML Profil gemäß BSI TR-03130 zu nutzen, ist die Angabe eines Verschlüsselungszertifikates des Identity Providers notwendig",
+    "For using the SAML Profile according to BSI TR-03130 encryption of SAML assertions is needed" : "Um das SAML Profil gemäß BSI TR-03130 zu nutzen, ist die Verschlüsselung von Authentifizierungsantworten notwendig",
     "AuthnRequestExtension XML element is no valid XML" : "AuthnRequestExtension XML-Element ist kein valides XML",
     "No valid Single Sign-On URL of the Identity Provider" : "Keine gültige Identity Provider Single Sign-On URL",
     "Identity Provider Single Sign-On URL must start with https" : "Identity Provider Single Sign-On URL muss mit https beginnen",

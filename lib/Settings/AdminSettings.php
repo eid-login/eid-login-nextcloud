@@ -254,15 +254,26 @@ class AdminSettings implements ISettings {
 			$errors[] = $this->l10n->t('EntityID of the Identity Provider is missing');
 		}
 		if ($idp_ext_tr03130 !== "") {
+			$tr03130Errors = [];
 			if ($idp_cert_enc === "") {
-				$errors[] = $this->l10n->t('For using the SAML Profile according to BSI TR-03130 an Encryption Certificate of the Identity Provider is needed');
-			} else {
+				$tr03130Errors[] = $this->l10n->t('For using the SAML Profile according to BSI TR-03130 an Encryption Certificate of the Identity Provider is needed');
+			}
+			if (is_null($sp_enforce_enc)) {
+				$tr03130Errors[] = $this->l10n->t('For using the SAML Profile according to BSI TR-03130 encryption of SAML assertions is needed');
+			}
+			try {
 				$dom = new \DOMDocument();
-				if (!$dom->loadXML($idp_ext_tr03130)) {
-					$errors[] = $this->l10n->t('AuthnRequestExtension XML element is no valid XML');
-				} else {
-					$this->config->setAppValue('eidlogin', 'idp_ext_tr03130', $idp_ext_tr03130);
+				$res = $dom->loadXML($idp_ext_tr03130);
+				if (!$res) {
+					$tr03130Errors[] = $this->l10n->t('AuthnRequestExtension XML element is no valid XML');
 				}
+			} catch (\Exception $e) {
+				$tr03130Errors[] = $this->l10n->t('AuthnRequestExtension XML element is no valid XML');
+			}
+			if (count($tr03130Errors)>0) {
+				$errors = array_merge($errors, $tr03130Errors);
+			} else {
+				$this->config->setAppValue('eidlogin', 'idp_ext_tr03130', $idp_ext_tr03130);
 			}
 		} else {
 			$this->config->setAppValue('eidlogin', 'idp_ext_tr03130', '');

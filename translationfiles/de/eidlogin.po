@@ -351,6 +351,9 @@ msgstr "EntityID des Service Providers fehlt"
 msgid "For using the SAML Profile according to BSI TR-03130 an Encryption Certificate of the Identity Provider is needed"
 msgstr "Um das SAML Profil gemäß BSI TR-03130 zu nutzen, ist die Angabe eines Verschlüsselungszertifikates des Identity Providers notwendig"
 
+msgid "For using the SAML Profile according to BSI TR-03130 encryption of SAML assertions is needed"
+msgstr "Um das SAML Profil gemäß BSI TR-03130 zu nutzen, ist die Verschlüsselung von Authentifizierungsantworten notwendig"
+
 msgid "AuthnRequestExtension XML element is no valid XML"
 msgstr "AuthnRequestExtension XML-Element ist kein valides XML"
 

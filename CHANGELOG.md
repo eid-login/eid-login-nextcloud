@@ -3,6 +3,7 @@
 - Support for Nextcloud 22
 ### Changed
 - Update JS dependencies
+- Improved validation of BSI TR-03130 related settings
 ### Deprecated
 ### Removed
 - Support for Nextcloud 19

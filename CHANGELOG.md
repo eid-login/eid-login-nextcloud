@@ -1,8 +1,10 @@
 ## [Unreleased]
 ### Added
+- Support for Nextcloud 22
 ### Changed
 ### Deprecated
 ### Removed
+- Support for Nextcloud 19
 ### Fixed
 ### Security
 

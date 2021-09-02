@@ -151,8 +151,9 @@ describe('user related eID stuff', () => {
     cy.get('#eidlogin-settings-label-no_pw_login').click()
     expect(cy.get('.toast-error').length,1);
     cy.visit('/settings/user');
-    cy.intercept('PUT','/settings/users/testuser/settings').as('userSettings')
-    cy.get('#email').type('admin@admin.admin')
+    cy.intercept('PUT','/ocs/v2.php/cloud/users/testuser').as('userSettings')
+    cy.get('div.email-container input').type('admin@admin.admin')
+    cy.get('#displayname').focus()
     cy.wait('@userSettings')
     cy.visit('/settings/user/security');
     cy.get('#eidlogin-settings-label-no_pw_login').click()

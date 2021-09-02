@@ -143,8 +143,6 @@ class CertificateJob extends TimedJob {
 
 	/**
 	 * Inform admins about a certificate rollover via mail.
-	 *
-	 * @param string The message of the Exception
 	 */
 	private function informOnRollover() : void {
 		$uids = $this->getAdminUids();
@@ -169,7 +167,6 @@ class CertificateJob extends TimedJob {
 	 *
 	 * @param \DateTimeImmutable $validTo Date until the actual certificate is valid
 	 * @param \DateTimeImmutable $activateOn Date when the new certificate will be activated
-	 * @param string The message of the Exception
 	 */
 	private function informOnNewCert(\DateTimeImmutable $validTo, \DateTimeImmutable $activateOn) : void {
 		$uids = $this->getAdminUids();

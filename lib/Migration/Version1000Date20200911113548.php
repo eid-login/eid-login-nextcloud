@@ -11,12 +11,13 @@ declare(strict_types=1);
 namespace OCA\EidLogin\Migration;
 
 use Closure;
+use Doctrine\DBAL\Types\Types;
 use OCP\DB\ISchemaWrapper;
 use OCP\Migration\IOutput;
 use OCP\Migration\SimpleMigrationStep;
 
 /**
- * DB migration skript for version 1.0.0 of the eidlogin app.
+ * DB migration skript for the eidlogin app.
  */
 class Version1000Date20200911113548 extends SimpleMigrationStep {
 
@@ -36,40 +37,23 @@ class Version1000Date20200911113548 extends SimpleMigrationStep {
 	 */
 	public function changeSchema(IOutput $output, Closure $schemaClosure, array $options) {
 
-		// TODO Remove this construct when dropping NC19
-		$typeBIGINT = '';
-		$typeSTRING = '';
-		$typeTEXT = '';
-		$typeINTEGER = '';
-		if (substr(\OC_Util::getVersionString(),0,2)==='19') {
-			$typeBIGINT = \Doctrine\DBAL\Types\Type::BIGINT;
-			$typeSTRING = \Doctrine\DBAL\Types\Type::STRING;
-			$typeTEXT = \Doctrine\DBAL\Types\Type::TEXT;
-			$typeINTEGER = \Doctrine\DBAL\Types\Type::INTEGER;
-		} else {
-			$typeBIGINT = \Doctrine\DBAL\Types\Types::BIGINT;
-			$typeSTRING = \Doctrine\DBAL\Types\Types::STRING;
-			$typeTEXT = \Doctrine\DBAL\Types\Types::TEXT;
-			$typeINTEGER = \Doctrine\DBAL\Types\Types::INTEGER;
-		}
-
 		/** @var ISchemaWrapper $schema */
 		$schema = $schemaClosure();
 
 		if (!$schema->hasTable('eidlogin_eid_users')) {
 			$table = $schema->createTable('eidlogin_eid_users');
-			$table->addColumn('id', $typeBIGINT, [
+			$table->addColumn('id', Types::BIGINT, [
 				'autoincrement' => true,
 				'notnull' => true,
 				'length' => 8
 			]);
 			$table->setPrimaryKey(['id']);
-			$table->addColumn('eid', $typeSTRING, [
+			$table->addColumn('eid', Types::STRING, [
 				'notnull' => true,
 				'length' => 64,
 			]);
 			$table->addUniqueIndex(['eid'], 'eidlogin_eid_index');
-			$table->addColumn('uid', $typeSTRING, [
+			$table->addColumn('uid', Types::STRING, [
 				'notnull' => true,
 				'length' => 64,
 			]);
@@ -78,59 +62,59 @@ class Version1000Date20200911113548 extends SimpleMigrationStep {
 
 		if (!$schema->hasTable('eidlogin_eid_attributes')) {
 			$table = $schema->createTable('eidlogin_eid_attributes');
-			$table->addColumn('id', $typeBIGINT, [
+			$table->addColumn('id', Types::BIGINT, [
 				'autoincrement' => true,
 				'notnull' => true,
 				'length' => 8
 			]);
 			$table->setPrimaryKey(['id']);
-			$table->addColumn('uid', $typeSTRING, [
+			$table->addColumn('uid', Types::STRING, [
 				'notnull' => true,
 				'length' => 64
 			]);
-			$table->addColumn('name', $typeSTRING, [
+			$table->addColumn('name', Types::STRING, [
 				'notnull' => true,
 				'length' => 255,
 			]);
-			$table->addColumn('value', $typeTEXT, [
+			$table->addColumn('value', Types::TEXT, [
 				'notnull' => true,
 			]);
 		}
 
 		if (!$schema->hasTable('eidlogin_eid_continuedata')) {
 			$table = $schema->createTable('eidlogin_eid_continuedata');
-			$table->addColumn('id', $typeBIGINT, [
+			$table->addColumn('id', Types::BIGINT, [
 				'autoincrement' => true,
 				'length' => 8
 			]);
 			$table->setPrimaryKey(['id']);
-			$table->addColumn('uid', $typeSTRING, [
+			$table->addColumn('uid', Types::STRING, [
 				'notnull' => true,
 				'length' => 64
 			]);
-			$table->addColumn('value', $typeTEXT, [
+			$table->addColumn('value', Types::TEXT, [
 				'notnull' => true,
 			]);
-			$table->addColumn('time', $typeINTEGER, [
+			$table->addColumn('time', Types::INTEGER, [
 				'notnull' => true,
 			]);
 		}
 
 		if (!$schema->hasTable('eidlogin_eid_responsedata')) {
 			$table = $schema->createTable('eidlogin_eid_responsedata');
-			$table->addColumn('id', $typeBIGINT, [
+			$table->addColumn('id', Types::BIGINT, [
 				'autoincrement' => true,
 				'length' => 8
 			]);
 			$table->setPrimaryKey(['id']);
-			$table->addColumn('uid', $typeSTRING, [
+			$table->addColumn('uid', Types::STRING, [
 				'notnull' => true,
 				'length' => 64
 			]);
-			$table->addColumn('value', $typeTEXT, [
+			$table->addColumn('value', Types::TEXT, [
 				'notnull' => true,
 			]);
-			$table->addColumn('time', $typeINTEGER, [
+			$table->addColumn('time', Types::INTEGER, [
 				'notnull' => true,
 			]);
 		}

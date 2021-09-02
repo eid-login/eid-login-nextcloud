@@ -685,7 +685,7 @@ class EidService {
 	 */
 	public function deleteEids() : bool {
 		try {
-			foreach($this->userMapper->findAll() as $eidUser) {
+			foreach ($this->userMapper->findAll() as $eidUser) {
 				$this->config->deleteUserValue($eidUser->getId(), 'eidlogin', 'no_pw_login');
 			}
 			$this->userMapper->deleteAll();

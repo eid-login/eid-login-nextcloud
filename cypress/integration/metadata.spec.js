@@ -34,7 +34,7 @@ describe('Test the eID Template SP SAML metadata endpoint', () => {
       expect(certs.length).to.eq(1);
 
       const acs = xml.getElementsByTagName('md:AssertionConsumerService')[0];
-      expect(acs.getAttribute('Location')).to.eq('https://nextcloud21.p396.de/apps/eidlogin/saml/acs');
+      expect(acs.getAttribute('Location')).to.eq('https://nextcloud22.p396.de/apps/eidlogin/saml/acs');
       expect(acs.getAttribute('Binding')).to.eq('urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST');
 
       const nameIDFormat = xml.getElementsByTagName('md:NameIDFormat')[0];

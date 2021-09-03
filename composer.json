@@ -27,7 +27,13 @@
     },
     "scripts": {
         "lint": "vendor/bin/php-cs-fixer fix --dry-run",
-        "format": "vendor/bin/php-cs-fixer fix"
+        "format": "vendor/bin/php-cs-fixer fix",
+        "post-install-cmd": [
+            "../../../scripts/security-check.sh $(pwd)"
+        ],
+        "post-update-cmd": [
+            "../../../scripts/security-check.sh $(pwd)"
+        ]
     },
     "extra": {
         "mozart": {

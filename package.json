@@ -12,7 +12,8 @@
 		"build": "npx browserslist --update-db && npx webpack build -c webpack.config.js",
 		"watch": "npx browserslist --update-db && npx webpack watch -c webpack.config.js",
 		"clean": "rm -rf js/*",
-		"lint": "eslint src"
+		"lint": "eslint src",
+		"postinstall": "../../../scripts/security-check.sh `pwd`"
 	},
 	"dependencies": {
 		"@nextcloud/auth": "^1.3.0",

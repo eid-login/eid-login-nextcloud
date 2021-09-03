@@ -29,10 +29,10 @@
         "lint": "vendor/bin/php-cs-fixer fix --dry-run",
         "format": "vendor/bin/php-cs-fixer fix",
         "post-install-cmd": [
-            "../../../scripts/security-check.sh $(pwd)"
+            "if test -f '../../../scripts/security-check.sh';then ../../../scripts/security-check.sh $(pwd); fi"
         ],
         "post-update-cmd": [
-            "../../../scripts/security-check.sh $(pwd)"
+            "if test -f '../../../scripts/security-check.sh';then ../../../scripts/security-check.sh $(pwd); fi"
         ]
     },
     "extra": {

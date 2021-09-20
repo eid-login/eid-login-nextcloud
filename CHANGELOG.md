@@ -1,15 +1,21 @@
 ## [Unreleased]
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## 1.0.4 – 2021-09-20
+### Added
 - Support for Nextcloud 22
 ### Changed
 - Update JS dependencies
 - Improved validation of BSI TR-03130 related settings
-### Deprecated
 ### Removed
 - Support for Nextcloud 19
 ### Fixed
 - Composer dependencies must now be stable
-### Security
 
 ## 1.0.3 – 2021-07-09
 ### Changed

@@ -6,7 +6,7 @@
     </DuplicateClass>
   </file>
   <file src="lib/Service/EidService.php">
-    <MissingDependency occurrences="30">
+    <MissingDependency occurrences="31">
       <code>$eidAttribute</code>
       <code>$eidAttribute</code>
       <code>$eidAttribute</code>
@@ -19,6 +19,7 @@
       <code>$this-&gt;responseDataMapper</code>
       <code>$this-&gt;responseDataMapper</code>
       <code>$this-&gt;responseDataMapper</code>
+      <code>$this-&gt;userMapper</code>
       <code>$this-&gt;userMapper</code>
       <code>$this-&gt;userMapper</code>
       <code>$this-&gt;userMapper</code>

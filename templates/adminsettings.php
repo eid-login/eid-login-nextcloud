@@ -82,8 +82,7 @@ $tr03130Placeholder='<?xml version="1.0" encoding="UTF-8"?>
 					<h4><b><?php p($l->t('What is the eID-Login App?')); ?></b></h4>
 					<p>
 						<?php p($l->t('The eID-Login App enables users to login to Nextcloud using an ')); ?>
-						<b><?php p($l->t('eID-Card')); ?></b>
-						<?php p($l->t(', i.e. the ')); ?>
+						<b><?php p($l->t('eID-Card')); ?></b>&nbsp;<?php p($l->t('i.e. the ')); ?>
 						<a target="_blank" href="https://www.personalausweisportal.de/Webs/PA/DE/buergerinnen-und-buerger/online-ausweisen/online-ausweisen-node.html"><?php p($l->t('eID function')); ?></a>
 						<?php p($l->t(' of the German Identity Card.')); ?>
 						<?php p($l->t('For the connection of an eID to their Nextcloud account and the eID based login, users need an ')); ?>
@@ -191,8 +190,8 @@ $tr03130Placeholder='<?xml version="1.0" encoding="UTF-8"?>
 					<li>
 						<b><?php p($l->t('Configuration at the Identity Provider')); ?></b>
 						<br/>
-						<?php p($l->t('At the Identity Provider your Nextcloud instance, which serves as')); ?>
-						<b>Service Provider</b><?php p($l->t(', must be registered. The process of registration depends on the respective Identity Provider. The information needed for registration is provided in step 2.')); ?>
+						<?php p($l->t('At the Identity Provider your Nextcloud instance must be registered as')); ?>
+						<b>Service Provider</b><?php p($l->t('. The process of registration depends on the respective Identity Provider. The information needed for registration is provided in step 2.')); ?>
 					</li>
 					<li>
 						<b><?php p($l->t('Connect eID')); ?></b></br><?php p($l->t("In order to use a German eID ('Personalausweis') or another eID for the login at Nextcloud, the eID must be connected to an user account.")); ?>
@@ -313,7 +312,7 @@ $tr03130Placeholder='<?xml version="1.0" encoding="UTF-8"?>
 						</div>
 						<div class="col-6">
 							<br/>
-							<p><?php p($l->t('For a connection according to ')) ?><a target="_blank" href="<?php p($tr03130URL)?>">BSI TR-03130</a><?php p($l->t(' the corresponding AuthnRequestExtension XML element must be inserted here.')); ?></p>
+							<p><?php p($l->t('For a connection according to')) ?>&nbsp;<a target="_blank" href="<?php p($tr03130URL)?>">BSI TR-03130</a>&nbsp;<?php p($l->t('the corresponding AuthnRequestExtension XML element must be inserted here.')); ?></p>
 						</div>
 					</div>
 				</div>
@@ -474,7 +473,7 @@ $tr03130Placeholder='<?xml version="1.0" encoding="UTF-8"?>
 				<p class="settings-hint" for="eidlogin-settings-form-manual-idp_cert_enc"><?php p($l->t('Certificate to encrypt the authentication request. Omitting the element means that the SAML requests are not encrypted.')) ?></p>
 				<label for="eidlogin-settings-form-manual-idp_cert_enc"><?php p($l->t('Encryption Certificate of the Identity Provider')) ?></label><br/>
 				<textarea id="eidlogin-settings-form-manual-idp_cert_enc" name="idp_cert_enc"><?php p($_['idp_cert_enc']) ?></textarea>
-				<p class="settings-hint" for="eidlogin-settings-form-manual-idp_ext_tr03130"><?php p($l->t('For a connection according to ')) ?><a target="_blank" href="<?php p($tr03130URL)?>">BSI TR-03130</a><?php p($l->t(' the corresponding AuthnRequestExtension XML element must be inserted here.')); ?></p>
+				<p class="settings-hint" for="eidlogin-settings-form-manual-idp_ext_tr03130"><?php p($l->t('For a connection according to')) ?>&nbsp;<a target="_blank" href="<?php p($tr03130URL)?>">BSI TR-03130</a>&nbsp;<?php p($l->t('the corresponding AuthnRequestExtension XML element must be inserted here.')); ?></p>
 				<label for="eidlogin-settings-form-manual-idp_ext_tr03130"><?php p($l->t('AuthnRequestExtension XML element')) ?></label><br/>
 				<textarea id="eidlogin-settings-form-manual-idp_ext_tr03130" name="idp_ext_tr03130" placeholder="<?php p($tr03130Placeholder); ?>"><?php p($_['idp_ext_tr03130']) ?></textarea>
 			</div>
@@ -483,7 +482,7 @@ $tr03130Placeholder='<?xml version="1.0" encoding="UTF-8"?>
 			<br/><br/><br/><br/>
 			<div id="eidlogin-settings-manual-div-rollover" class="hidden">
 				<h3><?php p($l->t('SAML Certificate Rollover')) ?></h3>
-				<p class="warning"><?php p($l->t('The active certificates expire in ')); p($_['act-cert_validdays']); p($l->t(' days. For a regular certificate rollover no action is required. The rollover will be done automatically. But you always have the option to do a manual rollover, if needed.'))?></p>
+				<p class="warning"><?php p($l->t('The active certificates expire in')); ?>&nbsp;<?php p($_['act-cert_validdays']); ?>&nbsp;<?php p($l->t('days. For a regular certificate rollover no action is required. The rollover will be done automatically. But you always have the option to do a manual rollover, if needed.'))?></p>
 				<h4><?php p($l->t('Current certificates:')) ?></h4>
 				<div class="container">
 					<div class="row">

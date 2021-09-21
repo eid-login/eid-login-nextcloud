@@ -415,7 +415,7 @@ msgstr "Die eID-Login App ermöglicht Nutzern die Anmeldung an Nextcloud mit ein
 msgid "eID-Card"
 msgstr "eID-Karte"
 
-msgid ", i.e. the "
+msgid "i.e. the "
 msgstr "z.B. der "
 
 msgid "eID function"
@@ -586,11 +586,11 @@ msgstr " Dienst mit Voreinstellungen zu nutzen oder einen anderen Dienst zu wäh
 msgid "Configuration at the Identity Provider"
 msgstr "Konfiguration am Identity Provider"
 
-msgid "At the Identity Provider your Nextcloud instance, which serves as"
-msgstr "Beim Identity Provider muss Ihre Nextcloud-Instanz, die als"
+msgid "At the Identity Provider your Nextcloud instance must be registered as"
+msgstr "Beim Identity Provider muss Ihre Nextcloud-Instanz eingetragen werden als"
 
-msgid ", must be registered. The process of registration depends on the respective Identity Provider. The information needed for registration is provided in step 2."
-msgstr " dient, eingetragen werden. Das exakte Vorgehen ist vom jeweiligen Anbieter abhängig. Die benötigten Informationen werden Ihnen in Schritt 2 bereitgestellt."
+msgid ". The process of registration depends on the respective Identity Provider. The information needed for registration is provided in step 2."
+msgstr ". Das exakte Vorgehen ist vom jeweiligen Anbieter abhängig. Die benötigten Informationen werden Ihnen in Schritt 2 bereitgestellt."
 
 #: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:87
 msgid "Connect eID"
@@ -696,14 +696,14 @@ msgstr ""
 "AuthnRequestExtension XML Element"
 
 msgid ""
-"For a connection according to "
+"For a connection according to"
 msgstr ""
-"Um eine Verbindung gemäß "
+"Um eine Verbindung gemäß"
 
 msgid ""
-" the corresponding AuthnRequestExtension XML element must be inserted here."
+"the corresponding AuthnRequestExtension XML element must be inserted here."
 msgstr ""
-" zu nutzen, muss das entsprechende AuthnRequestExtension XML Element hier eingetragen werden."
+"zu nutzen, muss das entsprechende AuthnRequestExtension XML Element hier eingetragen werden."
 
 #: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:199
 msgid "Now go to the selected Identity Provider and use the following data to register the Service Provider there:"
@@ -842,12 +842,12 @@ msgid "SAML Certificate Rollover"
 msgstr "SAML Zertifikatswechsel"
 
 #: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:332
-msgid "The active certificates expire in "
-msgstr "Die aktuellen Zertifikate laufen in "
+msgid "The active certificates expire in"
+msgstr "Die aktuellen Zertifikate laufen in"
 
 #: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:332
-msgid " days. For a regular certificate rollover no action is required. The rollover will be done automatically. But you always have the option to do a manual rollover, if needed."
-msgstr " Tagen ab. Für einen regulären Zertifikatswechsel ist kein Handeln erforderlich. Der Wechsel auf ein neues Zertifikat erfolgt automatisch. Sie haben aber jederzeit auch die Möglichkeit bei Bedarf einen manuellen Zertifikatswechsel durchzuführen."
+msgid "days. For a regular certificate rollover no action is required. The rollover will be done automatically. But you always have the option to do a manual rollover, if needed."
+msgstr "Tagen ab. Für einen regulären Zertifikatswechsel ist kein Handeln erforderlich. Der Wechsel auf ein neues Zertifikat erfolgt automatisch. Sie haben aber jederzeit auch die Möglichkeit bei Bedarf einen manuellen Zertifikatswechsel durchzuführen."
 
 msgid "Current certificates:"
 msgstr "Aktuelle Zertifikate:"

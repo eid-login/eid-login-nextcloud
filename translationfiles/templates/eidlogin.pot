@@ -385,7 +385,7 @@ msgstr ""
 msgid "eID-Card"
 msgstr ""
 
-msgid ", i.e. the "
+msgid "i.e. the "
 msgstr ""
 
 msgid "eID function"
@@ -645,11 +645,11 @@ msgid ""
 msgstr ""
 
 msgid ""
-"For a connection according to "
+"For a connection according to"
 msgstr ""
 
 msgid ""
-" the corresponding AuthnRequestExtension XML element must be inserted here."
+"the corresponding AuthnRequestExtension XML element must be inserted here."
 msgstr ""
 
 #: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:199
@@ -777,11 +777,11 @@ msgid "SAML Certificate Rollover"
 msgstr ""
 
 #: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:332
-msgid "The active certificates expire in "
+msgid "The active certificates expire in"
 msgstr ""
 
 #: /home/tobias/Projects/eid-templates/eid-templates/nextcloud/custom_apps/eidlogin/templates/adminsettings.php:332
-msgid " days. For a regular certificate rollover no action is required. The rollover will be done automatically. But you always have the option to do a manual rollover, if needed."
+msgid "days. For a regular certificate rollover no action is required. The rollover will be done automatically. But you always have the option to do a manual rollover, if needed."
 msgstr ""
 
 msgid "Current certificates:"

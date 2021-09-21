@@ -4,5 +4,6 @@ before_cmds = [
     "npm install",
     "npm run build",
     "vendor/bin/mozart compose",
+    "composer remove eid-login/php-saml",
     "composer update --no-dev -n",
 ]

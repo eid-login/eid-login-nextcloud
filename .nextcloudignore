@@ -1,8 +1,9 @@
 .git
 cypress
-./src
+src
 node_modules
 translationfiles
+.editorconfig
 .eslintrc.js
 .gitignore
 .nextcloudignore
@@ -14,4 +15,6 @@ cypress.json
 krankerl.toml
 package-lock.json
 package.json
+psalm-baseline.xml
+psalm.xml
 webpack.config.js

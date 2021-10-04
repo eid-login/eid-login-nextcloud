@@ -6,6 +6,10 @@
 ### Fixed
 ### Security
 
+## 1.0.6 – 2021-10-04
+### Fixed
+- Setting correct notification links when nextcloud resides in a sub directory
+
 ## 1.0.5 – 2021-09-28
 ### Fixed
 - Setting correct redirect address when nextcloud resides in a sub directory

@@ -162,7 +162,7 @@ class Notifier implements INotifier {
 		// create notification
 		$notification = $this->notificationManager->createNotification();
 		$acceptAction = $notification->createAction();
-		$acceptAction->setLink('/settings/user/security', 'WEB');
+		$acceptAction->setLink($this->urlGenerator->getBaseUrl().'/settings/user/security', 'WEB');
 		$acceptAction->setLabel('accept');
 		$notification->addAction($acceptAction);
 		$notification->setApp('eidlogin');
@@ -199,7 +199,7 @@ class Notifier implements INotifier {
 			// create notification
 			$notification = $this->notificationManager->createNotification();
 			$acceptAction = $notification->createAction();
-			$acceptAction->setLink('/settings/admin/eidlogin', 'WEB');
+			$acceptAction->setLink($this->urlGenerator->getBaseUrl().'/settings/admin/eidlogin', 'WEB');
 			$acceptAction->setLabel('accept');
 			$notification->addAction($acceptAction);
 			$notification->setApp('eidlogin');

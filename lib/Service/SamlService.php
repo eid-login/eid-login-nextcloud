@@ -121,14 +121,14 @@ class SamlService {
 	 */
 	public function getSamlSettings() : array {
 		//determine if we should skip xml validation
-		$skipXmlValidation = $this->config->getSystemValue('eidlogin_skipxmlvalidation',false);
+		$skipXmlValidation = $this->config->getSystemValue('eidlogin_skipxmlvalidation', false);
 		// build acs url
 		$acsUrl = $this->urlGenerator->getBaseUrl();
 		$frontControllerActive = ($this->config->getSystemValue('htaccess.IgnoreFrontController', false) === true || getenv('front_controller_active') === 'true');
 		if (!$frontControllerActive) {
-			$acsUrl.='/index.php';
+			$acsUrl .= '/index.php';
 		}
-		$acsUrl.='/apps/eidlogin/saml/acs';
+		$acsUrl .= '/apps/eidlogin/saml/acs';
 		$settings = [
 			'strict' => true,
 			'debug' => false,

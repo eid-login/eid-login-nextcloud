@@ -66,7 +66,7 @@ class SamlController extends Controller {
 			$params = [
 				'meta' => $meta
 			];
-			$response = new StandaloneTemplateResponse('eidlogin','samlmetadata',$params);
+			$response = new StandaloneTemplateResponse('eidlogin', 'samlmetadata', $params);
 			$response->renderAs('blank');
 			$response->addHeader('Content-Type', 'text/xml;charset=UTF-8');
 

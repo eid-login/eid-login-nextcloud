@@ -75,7 +75,7 @@ class CertificateJob extends TimedJob {
 		$this->sslService = $sslService;
 
 		// Run once a day (set in seconds)
-		parent::setInterval(3600*24);
+		parent::setInterval(3600 * 24);
 	}
 
 	/**
@@ -153,7 +153,7 @@ class CertificateJob extends TimedJob {
 				$message = $this->mailer->createMessage();
 				$message->setTo([$email => $user->getDisplayName()]);
 				$message->setSubject("Nextcloud eID Login Certificate Rollover executed");
-				$body =  "The Nextcloud eID-Login App executed a Certificate Rollover.\n\n";
+				$body = "The Nextcloud eID-Login App executed a Certificate Rollover.\n\n";
 				$body .= "The old certificates have been saved in the database.\n\n";
 				$body .= "Please check, if the certificates are correctly used in communication with the Identity Provider!\n\n";
 				$message->setPlainBody($body);
@@ -177,7 +177,7 @@ class CertificateJob extends TimedJob {
 				$message = $this->mailer->createMessage();
 				$message->setTo([$email => $user->getDisplayName()]);
 				$message->setSubject("Nextcloud eID Login Certificate Rollover prepared");
-				$body =  "The Nextcloud eID-Login App prepared a Certificate Rollover. New certificates have been created and added to the SAML Metadata (".$this->urlGenerator->linkToRouteAbsolute('eidlogin.saml.meta').").\n\n";
+				$body = "The Nextcloud eID-Login App prepared a Certificate Rollover. New certificates have been created and added to the SAML Metadata (".$this->urlGenerator->linkToRouteAbsolute('eidlogin.saml.meta').").\n\n";
 				$body .= "The currently used certificates are about to expire and remain valid until ".$validTo->format('Y-m-d').". The new certificates will be activated on ".$activateOn->format('Y-m-d').".\n\n";
 				$body .= "Please check, if you need to add the new certificates manually at the used Identity Provider!\n\n";
 				$body .= "If you want to trigger the rollover manually at some earlier time, you can do this in the Settings page of the eID-Login App.";
@@ -194,7 +194,7 @@ class CertificateJob extends TimedJob {
 	 * @param \DateTimeImmutable ValidTo date of the actual certificate
 	 * @param string The message of the Exception
 	 */
-	private function informOnError(int $errorType, \DateTimeImmutable $validTo, string $msg="") : void {
+	private function informOnError(int $errorType, \DateTimeImmutable $validTo, string $msg = "") : void {
 		$uids = $this->getAdminUids();
 		foreach ($uids as $uid) {
 			$user = $this->userManager->get($uid);
@@ -203,12 +203,12 @@ class CertificateJob extends TimedJob {
 				$message = $this->mailer->createMessage();
 				$message->setTo([$email => $user->getDisplayName()]);
 				$message->setSubject("Nextcloud eID Login Certificate Rollover error");
-				$body =  "The certificate cronjob of the Nextcloud eID-Login App got an error:\n\n";
+				$body = "The certificate cronjob of the Nextcloud eID-Login App got an error:\n\n";
 				if (self::KEYROLLOVER_PREPARE_FAILED === $errorType) {
-					$body .=  "Failed to create new certificates.\n\n";
+					$body .= "Failed to create new certificates.\n\n";
 				}
 				if (self::KEYROLLOVER_EXECUTE_FAILED === $errorType) {
-					$body .=  "Failed to activate new certificates.\n\n";
+					$body .= "Failed to activate new certificates.\n\n";
 				}
 				if (!empty(trim($msg))) {
 					$body .= "Exception Message: ".$msg."\n\n";

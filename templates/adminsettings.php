@@ -12,7 +12,7 @@ if ($l->getLanguageCode() !== "en") {
 	$oecURL = "https://www.openecard.org/download/pc/";
 }
 $tr03130URL = "https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Publikationen/TechnischeRichtlinien/TR03130/TR-03130_TR-eID-Server_Part1.pdf?__blob=publicationFile&v=1";
-$tr03130Placeholder='<?xml version="1.0" encoding="UTF-8"?>
+$tr03130Placeholder = '<?xml version="1.0" encoding="UTF-8"?>
 <eid:AuthnRequestExtension xmlns:eid="http://bsi.bund.de/eID/" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="2">
 	<eid:RequestedAttributes>
 		<saml2:Attribute Name="DocumentType" eid:RequiredAttribute="true"/>

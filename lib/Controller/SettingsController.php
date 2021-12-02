@@ -112,7 +112,7 @@ class SettingsController extends Controller {
 			$this->logger->info($e->getMessage());
 			return new DataResponse([
 				'status' => 'error',
-			],422);
+			], 422);
 		}
 	}
 
@@ -155,7 +155,7 @@ class SettingsController extends Controller {
 		if (empty($errors)) {
 			$msg = $this->l10n->t('Settings have been saved');
 			// delete existing eID-Connections if requested
-			if ("true"===$eid_delete) {
+			if ("true" === $eid_delete) {
 				$this->logger->info("deleting ids");
 				$this->eidService->deleteEids();
 				$msg .= $this->l10n->t(', eID connections have been deleted');
@@ -185,7 +185,7 @@ class SettingsController extends Controller {
 		return new DataResponse([
 			'status' => 'error',
 			'errors' => $errors
-		],422);
+		], 422);
 	}
 
 	/**
@@ -246,7 +246,7 @@ class SettingsController extends Controller {
 			return new DataResponse([
 				'status' => 'error',
 				'message' => $this->l10n->t('Could not disable password based login, as no mail address is set for your account. But this is required if you want to recover access to the account.')
-			],409);
+			], 409);
 		}
 		$this->eidService->setNoPwLogin(!$noPwLogin);
 
@@ -275,7 +275,7 @@ class SettingsController extends Controller {
 			return new DataResponse([
 				'status' => 'error',
 				'message' => $msg
-			],409);
+			], 409);
 		}
 
 		return new DataResponse([
@@ -305,7 +305,7 @@ class SettingsController extends Controller {
 			return new DataResponse([
 				'status' => 'error',
 				'message' => $msg
-			],409);
+			], 409);
 		}
 
 		return new DataResponse([

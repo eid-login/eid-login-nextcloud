@@ -9,7 +9,7 @@
 namespace OCA\EidLogin\Migration;
 
 // register the composer autoloader for packages shipped by this app
-if ((@include_once __DIR__ . '/../../vendor/autoload.php')===false) {
+if ((@include_once __DIR__ . '/../../vendor/autoload.php') === false) {
 	throw new \Exception('Cannot include autoload. Did you install dependencies via composer?');
 }
 

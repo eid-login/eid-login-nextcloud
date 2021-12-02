@@ -140,7 +140,7 @@ class EidService {
 	 *
 	 * @param String $uid
 	 */
-	public function setUid($uid='') : void {
+	public function setUid($uid = '') : void {
 		$this->uid = $uid;
 	}
 
@@ -161,9 +161,9 @@ class EidService {
 	 * @throws \Exception If the user to work which could not be determined
 	 * @return bool True if an eid exists
 	 */
-	public function checkEid($uid='') : bool {
-		if ($uid==='') {
-			if ($this->uid==='') {
+	public function checkEid($uid = '') : bool {
+		if ($uid === '') {
+			if ($this->uid === '') {
 				throw new \Exception('$uid of EidService is null, could not determine user for which to checkEid!');
 			}
 			$uid = $this->uid;
@@ -182,8 +182,8 @@ class EidService {
 	 * @param bool $noPwLogin The value to set
 	 * @throws \Exception If the user to work which could not be determined
 	 */
-	public function setNoPwLogin($noPwLogin=false) : void {
-		if ($this->uid==='') {
+	public function setNoPwLogin($noPwLogin = false) : void {
+		if ($this->uid === '') {
 			throw new \Exception('$uid of EidService is null, could not determine user for which to set no_pw_login!');
 		}
 		if ($noPwLogin) {
@@ -200,7 +200,7 @@ class EidService {
 	 * @return bool True if password based login for current user is disabled
 	 */
 	public function checkNoPwLogin() : bool {
-		if ($this->uid==='') {
+		if ($this->uid === '') {
 			throw new \Exception('$uid of EidService is null, could not determine user for which to set no_pw_login!');
 		}
 		$noPwLogin = $this->config->getUserValue($this->uid, 'eidlogin', 'no_pw_login', 'false');
@@ -220,8 +220,8 @@ class EidService {
 	 * @return RedirectResponse the redirect response to start the flow
 	 * @throws \Exception If invalid flow param is given
 	 */
-	public function startEidFlow($flow='', $redirectUrl='/') {
-		if ($this->config->getAppValue('eidlogin', "activated", "")==="") {
+	public function startEidFlow($flow = '', $redirectUrl = '/') {
+		if ($this->config->getAppValue('eidlogin', "activated", "") === "") {
 			throw new \Exception('app not active');
 		}
 		if ($flow !== self::FLOW_CREATE && $flow !== self::FLOW_LOGIN) {
@@ -237,7 +237,7 @@ class EidService {
 		$reqId = "eidlogin_".\OC::$server->getSecureRandom()->generate(24, self::CHARS_RANDOM);
 		// the cookieId
 		$cookieId = "eidlogin_".\OC::$server->getSecureRandom()->generate(24, self::CHARS_RANDOM);
-		setcookie(self::COOKIE_NAME, $cookieId,  time()+60*5, '/', '', true, true);
+		setcookie(self::COOKIE_NAME, $cookieId, time() + 60 * 5, '/', '', true, true);
 		// data we need to continue when returning
 		$continue = [
 			self::KEY_FLOW => $flow,
@@ -338,7 +338,7 @@ class EidService {
 						throw new \Exception('Missing getAttribute Method on object'.print_r($encMethod, true));
 					}
 				}
-				if (count($encMethodList)!=1) {
+				if (count($encMethodList) != 1) {
 					throw new \Exception('Expected one EncryptionMethod Node as child of EncryptedData but found '.count($encMethodList));
 				}
 				if (!$encMethodList[0]->hasAttribute('Algorithm')) {
@@ -348,7 +348,7 @@ class EidService {
 					throw new \Exception('Found a EncryptionMethod Node for Encrypted Data with invalid Algorithm Attribute: '.$encMethodList[0]->getAttribute('Algorithm'));
 				}
 				$encMethodList = Utils::query($responseAsXMLenc, '/samlp:Response/saml:EncryptedAssertion/xenc:EncryptedData/ds:KeyInfo/xenc:EncryptedKey/xenc:EncryptionMethod');
-				if (count($encMethodList)!=1) {
+				if (count($encMethodList) != 1) {
 					throw new \Exception('Expected one EncryptionMethod Node as child of EncryptedKey but found '.count($encMethodList));
 				}
 				if (!$encMethodList[0]->hasAttribute('Algorithm')) {
@@ -376,7 +376,7 @@ class EidService {
 			$this->continueDataMapper->deleteByUid($inResponseTo);
 			// check the continue data is not older than 5 min
 			$time = $eidContinueData->getTime();
-			$limit = time()-300;
+			$limit = time() - 300;
 			if ($time < $limit) {
 				throw new \Exception('eid continue data found for inResponseTo: '.$inResponseTo.' is expired');
 			}
@@ -401,11 +401,11 @@ class EidService {
 						throw new \Exception("Missing SigAlg param");
 					}
 					if (!in_array($_GET['SigAlg'], $samlSettings['alg']['signing'])) {
-						throw new \Exception("Invalid SigAlg param ".filter_var($_REQUEST['SigAlg'],FILTER_SANITIZE_SPECIAL_CHARS));
+						throw new \Exception("Invalid SigAlg param ".filter_var($_REQUEST['SigAlg'], FILTER_SANITIZE_SPECIAL_CHARS));
 					}
 					Utils::validateBinarySign('SAMLResponse', $_GET, $samlSettings['idp']);
 					$attributes = $response->getAttributes();
-					if (array_key_exists('RestrictedID', $attributes) && count($attributes['RestrictedID'])===1) {
+					if (array_key_exists('RestrictedID', $attributes) && count($attributes['RestrictedID']) === 1) {
 						$eid = $attributes['RestrictedID'][0];
 					}
 				} else {
@@ -484,14 +484,14 @@ class EidService {
 		$flow = $responseData[self::KEY_FLOW];
 		$cookieIdFromResponseData = $responseData[self::KEY_COOKIE];
 		// check if correct cookie value is set
-		if (!array_key_exists(self::COOKIE_NAME,$_COOKIE)) {
+		if (!array_key_exists(self::COOKIE_NAME, $_COOKIE)) {
 			$this->logger->error('processResponseData could not find needed cookie');
 			$this->setErrorMsg($flow, $errMsgLogin, $errMsgCreate);
 
 			return $redirectUrl;
 		}
 		$cookieIdFromCookie = filter_var($_COOKIE[self::COOKIE_NAME], FILTER_SANITIZE_STRING);
-		setcookie(self::COOKIE_NAME, '',  time()-1, '/', '', true, true);
+		setcookie(self::COOKIE_NAME, '', time() - 1, '/', '', true, true);
 		if ($cookieIdFromCookie != $cookieIdFromResponseData) {
 			$this->logger->error('processResponseData could not find correct cookieId in cookie');
 			$this->setErrorMsg($flow, $errMsgLogin, $errMsgCreate);
@@ -499,14 +499,14 @@ class EidService {
 			return $redirectUrl;
 		}
 		// do we have errors or an unauthenticated saml state?
-		if (count($responseData['errors'])!==0 || !$responseData['isAuthenticated']) {
+		if (count($responseData['errors']) !== 0 || !$responseData['isAuthenticated']) {
 			// make error message more specific
 			$msg = '';
 			if (is_array($responseData['status'])) {
 				$msg = $responseData['status']['msg'];
 			}
 			preg_match('/.*cancel.*/', $msg, $res);
-			if (count($res)>0) {
+			if (count($res) > 0) {
 				$errMsgLogin = $this->l10n->t('Log in with eID aborted');
 				$errMsgCreate = $this->l10n->t('Creation of eID connection aborted');
 			}
@@ -542,7 +542,7 @@ class EidService {
 			} catch (\Exception $e) {
 				$this->logger->info('processSamlResponseData got error '.$e->getMessage());
 				// save nameId to session, to prevent another saml flow when creating the eid connection
-				$_SESSION[self::KEY_NAMEID]=$eid;
+				$_SESSION[self::KEY_NAMEID] = $eid;
 				$errMsgLogin = $this->l10n->t('eID-Login is not yet set up for your account');
 				$this->setErrorMsg($flow, $errMsgLogin, $errMsgCreate);
 
@@ -601,8 +601,8 @@ class EidService {
 	 *
 	 * @throws \Exception If an error occurs, message can be given to user!
 	 */
-	public function createEid($eid, $attributes=[]) : void {
-		if ($this->uid==='') {
+	public function createEid($eid, $attributes = []) : void {
+		if ($this->uid === '') {
 			$this->logger->error('$uid of EidService is null, could not determine user for which to createEid!');
 			throw new \Exception($this->l10n->t('Creation of eID connection failed'));
 		}
@@ -626,7 +626,7 @@ class EidService {
 			$eidUser->setEid($eid);
 			$this->userMapper->insert($eidUser);
 			foreach ($attributes as $name => $values) {
-				if (count($values)===0) {
+				if (count($values) === 0) {
 					continue;
 				}
 				$valueCount = 0;
@@ -659,9 +659,9 @@ class EidService {
 	 *
 	 * @throws \Exception If the user to work which could not be determined
 	 */
-	public function deleteEid(string $uid='') : void {
-		if ($uid==='') {
-			if ($this->uid==='') {
+	public function deleteEid(string $uid = '') : void {
+		if ($uid === '') {
+			if ($this->uid === '') {
 				throw new \Exception('$uid of EidService is null, could not determine user for which to deleteEid!');
 			}
 			$uid = $this->uid;
@@ -708,7 +708,7 @@ class EidService {
 	 * @param String $errMsgLogin The msg for the login flow
 	 * @param String $errMsgCreate The msg for the create flow
 	 */
-	private function setErrorMsg($flow=self::FLOW_LOGIN, $errMsgLogin='', $errMsgCreate='') : void {
+	private function setErrorMsg($flow = self::FLOW_LOGIN, $errMsgLogin = '', $errMsgCreate = '') : void {
 		if ($flow === self::FLOW_LOGIN) {
 			// will be shown on login page
 			$loginMessages = $this->session->get('loginMessages');

@@ -46,7 +46,7 @@ class CleanupDbJob extends TimedJob {
 		$this->responseDataMapper = $responseDataMapper;
 
 		// Run once every five minutes (set in seconds)
-		parent::setInterval(5*60);
+		parent::setInterval(5 * 60);
 	}
 
 	/**
@@ -55,7 +55,7 @@ class CleanupDbJob extends TimedJob {
 	 * @param array We expect null as arguments
 	 */
 	protected function run($arguments) {
-		$limit = time()-300;
+		$limit = time() - 300;
 		$this->logger->info('eidlogin CleanupDbJob will delete all eidcontinuedata older than '.$limit);
 		$this->continueDataMapper->deleteOlderThan($limit);
 		$this->logger->info('eidlogin CleanupDbJob will delete all eidresponsedata older than '.$limit);

@@ -43,7 +43,7 @@ class EnforceTlsMiddleware extends Middleware {
 	 * @throws \Exception
 	 */
 	public function beforeController($controller, $methodName) {
-		if ($this->reflector->hasAnnotation('EnforceTls') && strpos($this->urlGenerator->getBaseUrl(),'https://')!==0) {
+		if ($this->reflector->hasAnnotation('EnforceTls') && strpos($this->urlGenerator->getBaseUrl(), 'https://') !== 0) {
 			throw new \Exception('the eID-Login app can only be used with TLS - if you are running Nextcloud without TLS behind a proxy, please ensure you are setting the X-Forwarded-Proto Header correct in the request coming from the proxy or set the Nextcloud config option "overwriteprotocol" to "https"');
 		}
 	}

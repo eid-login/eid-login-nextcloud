@@ -72,9 +72,9 @@ class EidController extends Controller {
 	 *
 	 * @return RedirectResponse
 	 */
-	public function loginEid(string $redirect_url=null) {
+	public function loginEid(string $redirect_url = null) {
 		// go to base url if no redirect url is given
-		if(is_null($redirect_url)) {
+		if (is_null($redirect_url)) {
 			$redirect_url = $this->urlGenerator->getBaseUrl();
 			$redirect_url = $this->addFrontcontrollerToUrlIfNeeded($redirect_url);
 		}
@@ -179,15 +179,15 @@ class EidController extends Controller {
 
 	/**
 	 * Add a frontcontroller 'index.php' to a url if needed.
-	 * 
+	 *
 	 * @param string $url The url to modify
-	 * 
+	 *
 	 * @return string $url The modified url
 	 */
 	private function addFrontcontrollerToUrlIfNeeded(string $url): string {
 		$frontControllerActive = ($this->config->getSystemValue('htaccess.IgnoreFrontController', false) === true || getenv('front_controller_active') === 'true');
 		if (!$frontControllerActive) {
-			$url.='/index.php';
+			$url .= '/index.php';
 		}
 
 		return $url;

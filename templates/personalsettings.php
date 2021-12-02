@@ -25,7 +25,7 @@ if ($l->getLanguageCode() !== "en") {
 		<span id="eidlogin-settings-span-btntext-delete" class="hidden" data-btntext-delete="<?php p($l->t('Delete connection to eID'));?>"></span>
 		<div id="eidlogin-settings-div-eid" class="hidden">
 			<p id="eidlogin-settings-hint-eid" class="settings-hint"></p>
-			<div id="eidlogin-settings-div-no_pw_login"<?php if (''==$_['user_has_eid']) { ?> class="hidden"<?php } ?>>
+			<div id="eidlogin-settings-div-no_pw_login"<?php if ('' == $_['user_has_eid']) { ?> class="hidden"<?php } ?>>
 				<input type="checkbox" class="checkbox" id="eidlogin-settings-input-no_pw_login" <?php if ($_['no_pw_login']) {
 	p('checked');
 } ?>></input>

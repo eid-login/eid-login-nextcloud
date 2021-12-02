@@ -181,7 +181,7 @@ class AdminSettings implements ISettings {
 		];
 
 		foreach ($appValueKeys as $key) {
-			if ($this->config->getAppValue('eidlogin', $key, "")==="") {
+			if ($this->config->getAppValue('eidlogin', $key, "") === "") {
 				return false;
 			}
 		}
@@ -270,7 +270,7 @@ class AdminSettings implements ISettings {
 			} catch (\Exception $e) {
 				$tr03130Errors[] = $this->l10n->t('AuthnRequestExtension XML element is no valid XML');
 			}
-			if (count($tr03130Errors)>0) {
+			if (count($tr03130Errors) > 0) {
 				$errors = array_merge($errors, $tr03130Errors);
 			} else {
 				$this->config->setAppValue('eidlogin', 'idp_ext_tr03130', $idp_ext_tr03130);
@@ -281,7 +281,7 @@ class AdminSettings implements ISettings {
 		if ($idp_sso_url != "") {
 			if (!filter_var($idp_sso_url, FILTER_VALIDATE_URL)) {
 				$errors[] = $this->l10n->t('No valid Single Sign-On URL of the Identity Provider');
-			} elseif (strpos($idp_sso_url,'https://')!==0) {
+			} elseif (strpos($idp_sso_url, 'https://') !== 0) {
 				$errors[] = $this->l10n->t('Identity Provider Single Sign-On URL must start with https');
 			} else {
 				$this->config->setAppValue('eidlogin', 'idp_sso_url', filter_var($idp_sso_url, FILTER_SANITIZE_STRIPPED));
@@ -307,7 +307,7 @@ class AdminSettings implements ISettings {
 	 * Toggle activation state of the app.
 	 */
 	public function toggleActivated() : void {
-		if ($this->config->getAppValue('eidlogin', "activated", "")==="") {
+		if ($this->config->getAppValue('eidlogin', "activated", "") === "") {
 			$this->config->setAppValue('eidlogin', 'activated', '1');
 		} else {
 			$this->config->setAppValue('eidlogin', 'activated', '');
@@ -320,7 +320,7 @@ class AdminSettings implements ISettings {
 	 * @return bool True if app is activated
 	 */
 	public function getActivated() : bool {
-		if ($this->config->getAppValue('eidlogin', "activated", "")==="") {
+		if ($this->config->getAppValue('eidlogin', "activated", "") === "") {
 			return false;
 		} else {
 			return true;

@@ -151,7 +151,7 @@ class Notifier implements INotifier {
 	 *
 	 * @param IUser The user for which to create the notification, if null all current users will be notified.
 	 */
-	public function createSetupDoneNotification(IUser $user=null): void {
+	public function createSetupDoneNotification(IUser $user = null): void {
 		// determine users to handle
 		$users = [];
 		if (is_null($user)) {

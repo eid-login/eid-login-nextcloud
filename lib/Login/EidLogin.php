@@ -56,7 +56,7 @@ class EidLogin implements IAlternativeLogin {
 	public function getLink() :string {
 		$url = $this->urlGenerator->linkToRoute('eidlogin.eid.loginEid');
 		$url .= '?requesttoken='.urlencode($this->csrfTokenManager->getToken()->getEncryptedValue());
-		if (array_key_exists('redirect_url', $_GET) && strpos($_GET['redirect_url'],'/')===0) {
+		if (array_key_exists('redirect_url', $_GET) && strpos($_GET['redirect_url'], '/') === 0) {
 			$url .= '&redirect_url='.urlencode($_GET['redirect_url']);
 		}
 		return $url;
@@ -74,7 +74,7 @@ class EidLogin implements IAlternativeLogin {
 	 * Load necessary resources to present the login option, e.g. style-file to style the getClass()
 	 */
 	public function load() :void {
-		if (substr(\OC_Util::getVersionString(),0,2)<'22') {
+		if (substr(\OC_Util::getVersionString(), 0, 2) < '22') {
 			Util::addStyle('eidlogin', 'eidlogin-login-old');
 		} else {
 			Util::addStyle('eidlogin', 'eidlogin-login');

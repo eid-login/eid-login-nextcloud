@@ -28,13 +28,13 @@ use OCA\EidLogin\Settings\AdminSettings;
  * @package OCA\EidLogin\AppInfo
  */
 class Application extends App implements \OCP\AppFramework\Bootstrap\IBootstrap {
-	public function __construct(array $urlParams=[]) {
+	public function __construct(array $urlParams = []) {
 		parent::__construct('eidlogin', $urlParams);
 	}
 
 	public function register(\OCP\AppFramework\Bootstrap\IRegistrationContext $context): void {
 		// register the composer autoloader for packages shipped by this app
-		if ((@include_once __DIR__ . '/../../vendor/autoload.php')===false) {
+		if ((@include_once __DIR__ . '/../../vendor/autoload.php') === false) {
 			throw new \Exception('Cannot include autoload. Did you install dependencies via composer?');
 		}
 		//Middleware

@@ -67,7 +67,7 @@ class SslService {
 	public function getCertAct($endOnly = false) : String {
 		$certStr = $this->config->getAppValue('eidlogin', 'sp_cert_act', '');
 		if ($endOnly) {
-			$certStr = substr($certStr, strlen($certStr)-66,40);
+			$certStr = substr($certStr, strlen($certStr) - 66, 40);
 		}
 
 		return $certStr;
@@ -84,7 +84,7 @@ class SslService {
 	public function getCertActEnc($endOnly = false) : String {
 		$certStr = $this->config->getAppValue('eidlogin', 'sp_cert_act_enc', '');
 		if ($endOnly) {
-			$certStr = substr($certStr, strlen($certStr)-66,40);
+			$certStr = substr($certStr, strlen($certStr) - 66, 40);
 		}
 
 		return $certStr;
@@ -118,7 +118,7 @@ class SslService {
 	public function getCertNew($endOnly = false) : String {
 		$certStr = $this->config->getAppValue('eidlogin', 'sp_cert_new', '');
 		if ($endOnly) {
-			$certStr = substr($certStr, strlen($certStr)-66,40);
+			$certStr = substr($certStr, strlen($certStr) - 66, 40);
 		}
 
 		return $certStr;
@@ -135,7 +135,7 @@ class SslService {
 	public function getCertNewEnc($endOnly = false) : String {
 		$certStr = $this->config->getAppValue('eidlogin', 'sp_cert_new_enc', '');
 		if ($endOnly) {
-			$certStr = substr($certStr, strlen($certStr)-66,40);
+			$certStr = substr($certStr, strlen($certStr) - 66, 40);
 		}
 
 		return $certStr;
@@ -256,35 +256,35 @@ class SslService {
 	 */
 	public function rollover(): void {
 		$keyAct = $this->config->getAppValue('eidlogin', 'sp_key_act', '');
-		if (''===$keyAct) {
+		if ('' === $keyAct) {
 			throw new \Exception('no actual key found in eID-Login App config');
 		}
 		$certAct = $this->config->getAppValue('eidlogin', 'sp_cert_act', '');
-		if (''===$certAct) {
+		if ('' === $certAct) {
 			throw new \Exception('no actual cert found in eID-Login App config');
 		}
 		$keyNew = $this->config->getAppValue('eidlogin', 'sp_key_new', '');
-		if (''===$keyNew) {
+		if ('' === $keyNew) {
 			throw new \Exception('no new key found in eID-Login App config');
 		}
 		$certNew = $this->config->getAppValue('eidlogin', 'sp_cert_new', '');
-		if (''===$certNew) {
+		if ('' === $certNew) {
 			throw new \Exception('no new cert found in eID-Login App config');
 		}
 		$keyActEnc = $this->config->getAppValue('eidlogin', 'sp_key_act_enc', '');
-		if (''===$keyActEnc) {
+		if ('' === $keyActEnc) {
 			throw new \Exception('no actual key found in eID-Login App config');
 		}
 		$certActEnc = $this->config->getAppValue('eidlogin', 'sp_cert_act_enc', '');
-		if (''===$certActEnc) {
+		if ('' === $certActEnc) {
 			throw new \Exception('no actual cert found in eID-Login App config');
 		}
 		$keyNewEnc = $this->config->getAppValue('eidlogin', 'sp_key_new_enc', '');
-		if (''===$keyNewEnc) {
+		if ('' === $keyNewEnc) {
 			throw new \Exception('no new key found in eID-Login App config');
 		}
 		$certNewEnc = $this->config->getAppValue('eidlogin', 'sp_cert_new_enc', '');
-		if (''===$certNewEnc) {
+		if ('' === $certNewEnc) {
 			throw new \Exception('no new cert found in eID-Login App config');
 		}
 		$this->config->setAppValue('eidlogin', 'sp_key_old', $keyAct);
@@ -321,7 +321,7 @@ class SslService {
 		if (!$pubKeyDetails) {
 			throw new \Exception('Could not read public key details');
 		}
-		if ($pubKeyDetails['bits']>=self::KEY_LENGTH_LIMIT_LOWER) {
+		if ($pubKeyDetails['bits'] >= self::KEY_LENGTH_LIMIT_LOWER) {
 			return true;
 		}
 

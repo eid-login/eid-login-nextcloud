@@ -20,8 +20,8 @@
         "eid-login/php-saml": "1.0.0"
     },
     "require-dev": {
-        "nextcloud/coding-standard": "^1",
-        "friendsofphp/php-cs-fixer": "^3",
+        "nextcloud/coding-standard": "^1.0",
+        "friendsofphp/php-cs-fixer": "^3.3",
         "coenjacobs/mozart": "^0.7.1",
         "vimeo/psalm": "^4.7.2"
     },

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f33ca7589be15aaf3cd1dfac547604b8",
+    "content-hash": "f14933e336743c5d0de1397566ed6b1d",
     "packages": [
         {
             "name": "eid-login/php-saml",

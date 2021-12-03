@@ -505,6 +505,8 @@ class EidService {
 			$msg = '';
 			if (is_array($responseData['status'])) {
 				$msg = $responseData['status']['msg'];
+			} else if (is_object($responseData['status'])) {
+				$msg = $responseData['status']->msg;
 			}
 			preg_match('/.*cancel.*/', $msg, $res);
 			if (count($res) > 0) {

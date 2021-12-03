@@ -423,6 +423,7 @@ class EidService {
 		$responseData = [
 			'isAuthenticated' => $auth->isAuthenticated(),
 			'lastErrorException' => $auth->getLastErrorException(),
+			'lastErrorReason' => $auth->getLastErrorReason(),
 			'errors' => $errors,
 			'status' => Utils::getStatus($responseAsXML),
 			'eid' => $eid,
@@ -511,6 +512,12 @@ class EidService {
 				$errMsgCreate = $this->l10n->t('Creation of eID connection aborted');
 			}
 			$this->logger->info('processResponseData found errors or user not authenticated - errors:'.print_r($responseData['errors'], true).', saml status msg: '.$msg);
+			if (get_class($responseData['lastErrorException']) === "Ecsec\Eidlogin\Dep\OneLogin\Saml2\ValidationError") {
+				$this->logger->info('processResponseData last error exception: '.print_r($responseData['lastErrorException']->getMessage(), true));
+			}
+			if ($responseData['lastErrorReason'] !== "") {
+				$this->logger->info('processResponseData last error reason: '.print_r($responseData['lastErrorReason'], true));
+			}
 			$this->setErrorMsg($flow, $errMsgLogin, $errMsgCreate);
 
 			return $redirectUrl;

@@ -237,7 +237,14 @@ class EidService {
 		$reqId = "eidlogin_".\OC::$server->getSecureRandom()->generate(24, self::CHARS_RANDOM);
 		// the cookieId
 		$cookieId = "eidlogin_".\OC::$server->getSecureRandom()->generate(24, self::CHARS_RANDOM);
-		setcookie(self::COOKIE_NAME, $cookieId, time() + 60 * 5, '/', '', true, true);
+		// setcookie(self::COOKIE_NAME, $cookieId, time() + 60 * 5, '/', '', true, true);
+		setcookie(self::COOKIE_NAME, $cookieId, [
+			'expires' => time()+60*5,
+			'path' => '/',
+			'secure' => true,
+			'httponly' => true,
+			'samesite' => 'Lax'
+		]);
 		// data we need to continue when returning
 		$continue = [
 			self::KEY_FLOW => $flow,
@@ -431,20 +438,16 @@ class EidService {
 		];
 		$continueData = get_object_vars(json_decode($eidContinueData->getValue()));
 		$responseData = array_merge($responseData, $continueData);
-		// if we have an TR-03130 flow we need another redirect step,
+		// we need another redirect step, to fetch the cookie (would not be sent with a cross-site post request with samesite=Lax)
+		// or to return to the browser in a TR-03130 flow
 		// for this we save the response data to the db
-		if ($this->samlService->checkForTr03130()) {
-			$responseData = json_encode($responseData);
-			$eidResponseData = new EidResponseData();
-			$eidResponseData->setUid($responseId);
-			$eidResponseData->setValue($responseData);
-			$eidResponseData->setTime(time());
-			$this->responseDataMapper->insert($eidResponseData);
-			$redirectUrl = $this->urlGenerator->linkToRouteAbsolute('eidlogin.eid.resume', ['id' => urlencode($responseId)]);
-		// otherwise process data now
-		} else {
-			$redirectUrl = $this->processSamlResponseData($request, $responseId, $responseData);
-		}
+		$responseData = json_encode($responseData);
+		$eidResponseData = new EidResponseData();
+		$eidResponseData->setUid($responseId);
+		$eidResponseData->setValue($responseData);
+		$eidResponseData->setTime(time());
+		$this->responseDataMapper->insert($eidResponseData);
+		$redirectUrl = $this->urlGenerator->linkToRouteAbsolute('eidlogin.eid.resume', ['id' => urlencode($responseId)]);
 
 		return $redirectUrl;
 	}
@@ -492,7 +495,13 @@ class EidService {
 			return $redirectUrl;
 		}
 		$cookieIdFromCookie = filter_var($_COOKIE[self::COOKIE_NAME], FILTER_SANITIZE_STRING);
-		setcookie(self::COOKIE_NAME, '', time() - 1, '/', '', true, true);
+		setcookie(self::COOKIE_NAME, '', [
+			'expires' => time()+60*5,
+			'path' => '/',
+			'secure' => true,
+			'httponly' => true,
+			'samesite' => 'Lax'
+		]);
 		if ($cookieIdFromCookie != $cookieIdFromResponseData) {
 			$this->logger->error('processResponseData could not find correct cookieId in cookie');
 			$this->setErrorMsg($flow, $errMsgLogin, $errMsgCreate);

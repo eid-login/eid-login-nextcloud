@@ -144,6 +144,7 @@ class EidController extends Controller {
 	 * @EnforceTls
 	 * @NoCSRFRequired
 	 * @PublicPage
+	 * @UseSession
 	 *
 	 * @return RedirectResponse
 	 */

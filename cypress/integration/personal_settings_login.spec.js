@@ -152,7 +152,7 @@ describe('user related eID stuff', () => {
     expect(cy.get('.toast-error').length,1);
     cy.visit('/settings/user');
     cy.intercept('PUT','/ocs/v2.php/cloud/users/testuser').as('userSettings')
-    cy.get('div.email-container input').type('admin@admin.admin')
+    cy.get('div.email input').type('admin@admin.admin', { force: true })
     cy.get('#displayname').focus()
     cy.wait('@userSettings')
     cy.visit('/settings/user/security');

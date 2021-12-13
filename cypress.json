@@ -1,5 +1,5 @@
 {
-  "baseUrl": "https://nextcloud22.p396.de",
+  "baseUrl": "https://nextcloud23.p396.de",
   "chromeWebSecurity": false,
   "pageLoadTimeout": 40000,
   "defaultCommandTimeout": 20000

@@ -17,7 +17,7 @@
       }
     },
     "require": {
-        "eid-login/php-saml": "dev-master"
+        "eid-login/php-saml": "^1.1.0"
     },
     "require-dev": {
         "nextcloud/coding-standard": "^1.0",
@@ -36,7 +36,6 @@
         ]
     },
     "extra": {
-        "minimum-stability": "dev",
         "mozart": {
             "dep_namespace": "Ecsec\\Eidlogin\\Dep\\",
             "dep_directory": "/dep/",

@@ -6,6 +6,15 @@
 ### Fixed
 ### Security
 
+## 1.0.7 – 2021-12-13
+### Added
+- Support for Nextcloud 23
+### Removed
+- Support for Nextcloud 20
+### Changed
+- Update dependencies to use php8 compatible php-saml lib version
+- Update tests for Nextcloud 23
+
 ## 1.0.6 – 2021-10-04
 ### Fixed
 - Setting correct notification links when nextcloud resides in a sub directory

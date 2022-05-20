@@ -6,6 +6,14 @@
 ### Fixed
 ### Security
 
+## 1.0.8 – 2022-05-20
+### Added
+- Support for Nextcloud 24
+### Removed
+- Support for Nextcloud 21
+### Changed
+- Update npm dependencies
+
 ## 1.0.7 – 2021-12-13
 ### Added
 - Support for Nextcloud 23

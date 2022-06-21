@@ -63,7 +63,7 @@ class EidService {
 	private $samlService;
 	/** @var String */
 	private $uid;
-	
+
 	/** @var String */
 	public const CHARS_RANDOM = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 	/** @var String */
@@ -422,7 +422,7 @@ class EidService {
 				$attributesAsXML = $response->getAttributesAsXML();
 			}
 		} catch (\Exception $e) {
-			$this->logger->info("error processing SAML Response for user ".$this->uid.": ".$e->getMessage());
+			$this->logger->error("error processing SAML Response for user ".$this->uid.": ".$e->getMessage());
 			$errors[] = $e->getMessage();
 		}
 		// build response data
@@ -477,7 +477,7 @@ class EidService {
 				$this->responseDataMapper->deleteByUid($responseId);
 				$responseData = get_object_vars(json_decode($eidResponseData->getValue()));
 			} catch (\Exception $e) {
-				$this->logger->info('processSamlResponseData - could not find responseData for responseId: '.$responseId);
+				$this->logger->error('processSamlResponseData - could not find responseData for responseId: '.$responseId);
 
 				return $redirectUrl;
 			}
@@ -602,7 +602,7 @@ class EidService {
 					$this->session->set(self::KEY_LOGIN_TOKEN, $responseData[self::KEY_LOGIN_TOKEN]);
 				}
 			} catch (\Exception $e) {
-				$this->logger->info('processSamlResponse in login flow got error '.$e->getMessage());
+				$this->logger->error('processSamlResponse in login flow got error '.$e->getMessage());
 				$this->setErrorMsg($flow, $errMsgLogin, $errMsgCreate);
 				$redirectUrl = $this->urlGenerator->getBaseURL();
 			}

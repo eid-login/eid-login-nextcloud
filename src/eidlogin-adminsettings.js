@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
   // dom elements
   const dataSrc = document.getElementById('eidlogin-settings-datasrc');
-  const wizard = document.getElementById('eidlogin-settings-wizard'); 
-  const manual = document.getElementById('eidlogin-settings-manual'); 
+  const wizard = document.getElementById('eidlogin-settings-wizard');
+  const manual = document.getElementById('eidlogin-settings-manual');
   const buttonHelp = document.getElementById('eidlogin-settings-button-help');
   const buttonSelectSkid = document.getElementById('eidlogin-settings-button-select-skid');
   const inputMetaIdp = document.getElementById('eidlogin-settings-form-wizard-idp_metadata_url');
@@ -74,8 +74,8 @@ document.addEventListener('DOMContentLoaded', function(e) {
   // switch the active wizard panel and reconfigure step links
   function switchWizardPanel(panel) {
     panel = parseInt(panel);
-    buttonToggleIdp.innerHTML=txtShowIdp;
-    buttonToggleSp.innerHTML=txtShowSp;
+    buttonToggleIdp.innerText=txtShowIdp;
+    buttonToggleSp.innerText=txtShowSp;
     wizard.getElementsByClassName('step').forEach(el => {
       el.classList.remove('active');
       el.classList.add('disabled');
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
   // toggle the wizard help div
   function toggleHelp() {
-    const panelHelp = document.getElementById('eidlogin-settings-wizard-panel-help'); 
+    const panelHelp = document.getElementById('eidlogin-settings-wizard-panel-help');
     if (panelHelp.classList.contains('hidden')) {
       panelHelp.classList.remove('hidden');
       buttonHelp.classList.add('active');
@@ -189,10 +189,10 @@ document.addEventListener('DOMContentLoaded', function(e) {
     const panelIdpSettings = document.getElementById('eidlogin-settings-wizard-panel-idp_settings');
     if (panelIdpSettings.classList.contains('hidden')) {
       panelIdpSettings.classList.remove('hidden');
-      buttonToggleIdp.innerHTML=txtHideIdp;
+      buttonToggleIdp.innerText=txtHideIdp;
     } else {
       panelIdpSettings.classList.add('hidden');
-      buttonToggleIdp.innerHTML=txtShowIdp;
+      buttonToggleIdp.innerText=txtShowIdp;
     }
   }
   buttonToggleIdp.addEventListener('click', toggleIdp);
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
         // maybe we need to switch panel
         if (switchPanel) {
           // display the sp_entity_id
-          document.getElementById('eidlogin-settings-wizard-display-sp_entity_id').innerHTML=document.getElementById('eidlogin-settings-form-wizard-sp_entity_id').value;
+          document.getElementById('eidlogin-settings-wizard-display-sp_entity_id').innerText=document.getElementById('eidlogin-settings-form-wizard-sp_entity_id').value;
           // hide the skid button and it`s text, if we don't have skid as configured idp
           if (inputMetaIdp.value===skidMetadataUrl) {
             skidCell1.classList.remove('hidden');
@@ -301,7 +301,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
   // finish the wizard with a page reload
   function finish(e) {
     window.scrollTo(0,0);
-    window.location.reload(); 
+    window.location.reload();
   }
   buttonWizardFinish.addEventListener('click', finish);
 
@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
         if(e.target.status == 200) {
           var spMetadata = e.target.responseText;
           var spMetadataPre = document.getElementById('eidlogin-settings-wizard-panel-register-sp-metadata');
-          spMetadataPre.innerHTML = "";
+          spMetadataPre.innerText = "";
           spMetadataPre.appendChild(document.createTextNode(spMetadata));
         } else {
           showError(errMsg);
@@ -329,16 +329,16 @@ document.addEventListener('DOMContentLoaded', function(e) {
       xhr.open('GET', url, true);
       xhr.setRequestHeader('requesttoken', requesttoken);
       xhr.send();
-      buttonToggleSp.innerHTML=txtHideSp;
+      buttonToggleSp.innerText=txtHideSp;
       spPanel.classList.remove('hidden');
     } else {
-      buttonToggleSp.innerHTML=txtShowSp;
+      buttonToggleSp.innerText=txtShowSp;
       spPanel.classList.add('hidden');
     }
   }
   buttonToggleSp.addEventListener('click', toggleSp);
 
-  // createEid 
+  // createEid
   function createEid() {
     var requesttoken = getRequestToken();
     var url = generateUrl('/apps/eidlogin/eid/createeid');
@@ -474,8 +474,8 @@ document.addEventListener('DOMContentLoaded', function(e) {
             var newCert = JSON.parse(e.target.responseText).cert_new;
             var newCertEnc = JSON.parse(e.target.responseText).cert_new_enc;
             if(e.target.status == 200) {
-              certNewDiv.innerHTML = '... '+newCert;
-              certNewEncDiv.innerHTML = '... '+newCertEnc;
+              certNewDiv.innerText = '... '+newCert;
+              certNewEncDiv.innerText = '... '+newCertEnc;
               buttonRolloverExec.disabled = false;
               spanRolloverExec.classList.add('hidden');
               showSuccess(msg);
@@ -519,10 +519,10 @@ document.addEventListener('DOMContentLoaded', function(e) {
               var certAct = JSON.parse(e.target.responseText).cert_act;
               var certActEnc = JSON.parse(e.target.responseText).cert_act_enc;
               if(e.target.status == 200) {
-                certActDiv.innerHTML = '... '+certAct;
-                certActEncDiv.innerHTML = '... '+certActEnc;
-                certNewDiv.innerHTML = t('eidlogin','No new certificate prepared yet.');
-                certNewEncDiv.innerHTML = t('eidlogin','No new certificate prepared yet.');
+                certActDiv.innerText = '... '+certAct;
+                certActEncDiv.innerText = '... '+certActEnc;
+                certNewDiv.innerText = t('eidlogin','No new certificate prepared yet.');
+                certNewEncDiv.innerText = t('eidlogin','No new certificate prepared yet.');
                 buttonRolloverExec.disabled = true;
                 spanRolloverExec.classList.remove('hidden');
                 showSuccess(msg);

@@ -4,7 +4,7 @@ import { showError, showSuccess } from '@nextcloud/dialogs'
 import { getRequestToken } from '@nextcloud/auth'
 import { generateUrl } from '@nextcloud/router'
 
-document.addEventListener('DOMContentLoaded', function(event) { 
+document.addEventListener('DOMContentLoaded', function(event) {
 
   const userHasEidSpan = document.getElementById('eidlogin-settings-span-user-has-eid');
   // if no info about eid in template, app is not activated, template will show message
@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function(event) {
     return;
   }
 
-  const hintCreate = document.getElementById('eidlogin-settings-span-hint-create').innerHTML;
-  const hintDelete = document.getElementById('eidlogin-settings-span-hint-delete').innerHTML;
+  const hintCreate = document.getElementById('eidlogin-settings-span-hint-create').innerText;
+  const hintDelete = document.getElementById('eidlogin-settings-span-hint-delete').innerText;
   const btnTextCreate = document.getElementById('eidlogin-settings-span-btntext-create').dataset.btntextCreate;
   const btnTextDelete = document.getElementById('eidlogin-settings-span-btntext-delete').dataset.btntextDelete;
   const hintEid = document.getElementById('eidlogin-settings-hint-eid');
@@ -25,9 +25,9 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
   // show Create stuff
   function showCreate() {
-    hintEid.innerHTML = hintCreate;
+    hintEid.innerText = hintCreate;
     hintButton.classList.add("hidden");
-    buttonEid.innerHTML = btnTextCreate;
+    buttonEid.innerText = btnTextCreate;
     buttonEid.removeEventListener('click', deleteEid);
     buttonEid.addEventListener('click', createEid);
     noPwLoginLabel.removeEventListener('click', toogleNoPwLogin);
@@ -36,16 +36,16 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
   // show Delete stuff
   function showDelete() {
-    hintEid.innerHTML = hintDelete;
+    hintEid.innerText = hintDelete;
     hintButton.classList.remove("hidden");
-    buttonEid.innerHTML = btnTextDelete;
+    buttonEid.innerText = btnTextDelete;
     buttonEid.removeEventListener('click', createEid);
     buttonEid.addEventListener('click', deleteEid);
     noPwLoginLabel.addEventListener('click', toogleNoPwLogin);
     noPwLoginInput.disabled = false;
   }
 
-  // createEid 
+  // createEid
   function createEid() {
     var requesttoken = getRequestToken();
     var url = generateUrl('/apps/eidlogin/eid/createeid');
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     window.location.href=url;
   }
 
-  // deleteEid 
+  // deleteEid
   function deleteEid() {
     OC.dialogs.confirmDestructive(
       t('eidlogin','After the deletion you will not be able to access your account via eID-Login anymore. Are you sure?'),

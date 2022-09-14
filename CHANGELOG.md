@@ -6,6 +6,13 @@
 ### Fixed
 ### Security
 
+## 1.0.9 – 2022-09-14
+### Changed
+- Update dependencies
+- Replace innerHTML with innerText
+- Update caniuse-lite
+- Use error not info for logging in exception block
+
 ## 1.0.8 – 2022-05-20
 ### Added
 - Support for Nextcloud 24

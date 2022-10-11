@@ -6,6 +6,14 @@
 ### Fixed
 ### Security
 
+## 1.0.10 – 2022-10-11
+### Added
+- Support for Nextcloud 25
+### Removed
+- Support for Nextcloud 22
+### Changed
+- Update dependencies
+
 ## 1.0.9 – 2022-09-14
 ### Changed
 - Update dependencies

@@ -16,7 +16,7 @@ const browserify = require('@cypress/browserify-preprocessor')
 // used for the db tasks
 const db = require("mysql2/promise").createPool({
   host: 'localhost',
-  port: 3310,
+  port: 3309,
   user: 'p396ncuser',
   password: 'p396ncpass',
   database: 'p396ncdb'

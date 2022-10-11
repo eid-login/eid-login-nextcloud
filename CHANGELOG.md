@@ -6,6 +6,10 @@
 ### Fixed
 ### Security
 
+## 1.0.11 – 2022-10-11
+### Changed
+- Fix wrong version number
+
 ## 1.0.10 – 2022-10-11
 ### Added
 - Support for Nextcloud 25

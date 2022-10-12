@@ -23,7 +23,8 @@ Cypress.Commands.add('login', (user, password, route = '/apps/files') => {
 	cy.visit(route)
 	cy.get('input[name=user]').type(user)
 	cy.get('input[name=password]').type(password)
-	cy.get('button[type=submit]').click()
+    // Make it work with Nextcloud 24 and 25.
+	cy.get('input[type=submit],button[type=submit]').click()
 	cy.url().should('include', route)
 })
 

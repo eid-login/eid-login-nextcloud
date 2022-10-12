@@ -1,6 +1,0 @@
-{
-  "baseUrl": "https://nextcloud25.p396.de",
-  "chromeWebSecurity": false,
-  "pageLoadTimeout": 40000,
-  "defaultCommandTimeout": 20000
-}

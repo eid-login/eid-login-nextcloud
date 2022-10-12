@@ -36,24 +36,13 @@ describe('admin related eID stuff', () => {
       var ssoDesc = entDesc[nsSecond+":IDPSSODescriptor"]
       cy.wrap(ssoDesc[nsSecond+":SingleSignOnService"][0]["@_Location"]).as("idp_sso_url")
       var keyDesc = ssoDesc[nsSecond+":KeyDescriptor"]
-      var nsThird = '';
+
       Object.keys(keyDesc).forEach((key) => {
         if (keyDesc[key]["@_use"] == "signing") {
-          Object.keys(keyDesc[key]).forEach((key2) => {
-            var match = key2.match('.*(?=:)')
-            if (match!=null) {
-              nsThird = match[0]
-              return
-            }
-          })
-        }
-      })
-      Object.keys(keyDesc).forEach((key) => {
-        if (keyDesc[key]["@_use"] == "signing") {
-          cy.wrap(keyDesc[key][nsThird+":KeyInfo"][nsThird+":X509Data"][nsThird+":X509Certificate"]).as("idp_cert_sign")
+          cy.wrap(keyDesc[key].KeyInfo.X509Data.X509Certificate).as('idp_cert_sign')
         }
         if (keyDesc[key]["@_use"] == "encryption") {
-          cy.wrap(keyDesc[key][nsThird+":KeyInfo"][nsThird+":X509Data"][nsThird+":X509Certificate"]).as("idp_cert_enc")
+          cy.wrap(keyDesc[key].KeyInfo.X509Data.X509Certificate).as('idp_cert_enc')
         }
       });
     });

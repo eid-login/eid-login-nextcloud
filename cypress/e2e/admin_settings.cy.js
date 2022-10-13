@@ -47,6 +47,15 @@ describe('admin related eID stuff', () => {
       });
     });
     cy.visit('/settings/admin/eidlogin');
+
+    // Increase the viewport for this test to prevent error since Nextcloud 25:
+    // "expected '<div#eidlogin-settings-wizard-panel-help.container.panel>' to
+    // be 'visible'. This element is not visible because its ancestor has
+    // position: fixed CSS property and it is overflowed by other elements."
+    // Relevant CSS: "#content:not(.with-sidebar--full) { position: fixed; }".
+    // The same happens with "wizard-panel-idp_settings" below.
+    cy.viewport(1280, 1080);
+
     // overview panel at start
     cy.get(`${prefix}wizard`).should('be.visible')
     cy.get(`${prefix}wizard-panel-1`).should('be.visible')
@@ -78,6 +87,8 @@ describe('admin related eID stuff', () => {
     cy.get(`${prefix}form-wizard-sp_enforce_enc`).should("not.be.checked")
     cy.get(`${prefix}form-wizard-idp_metadata_url`).type(skidMetaUrl);
     cy.get(`${prefix}button-toggleidp`).click()
+    // Further increase viewport for this test, see comment above.
+    cy.viewport(1280, 4096);
     cy.get(`${prefix}wizard-panel-idp_settings`).should('be.visible')
     cy.get("@idp_entity_id").then((idp_entity_id) => {
       cy.get(`${prefix}form-wizard-idp_entity_id`).should("have.value", idp_entity_id)

@@ -6,12 +6,15 @@ const parser = require('fast-xml-parser');
  */
 const prefix = '#eidlogin-settings-'
 const skidMetaUrl = 'https://service.skidentity.de/fs/saml/metadata'
+// Since Nextcloud 25, class "eidlogin-login-button" is overwritten with vue
+// classes. Use another selector instead.
+const eidloginLoginButton = '#alternative-logins > a[href^="/apps/eidlogin/eid/logineid"]';
 
 describe('admin related eID stuff', () => {
   beforeEach(() => {
     cy.task('dbClear')
     cy.visit('/login');
-    cy.get('.eidlogin-login-button').should('not.exist')
+    cy.get(`${eidloginLoginButton}`).should('not.exist')
     cy.login('admin','adminP396');
   });
 
@@ -156,7 +159,7 @@ describe('admin related eID stuff', () => {
     cy.get(`${prefix}manual`).should('be.visible')
     // check for eID-Login button
     cy.logout();
-    cy.get('.eidlogin-login-button').should('be.visible')
+    cy.get(`${eidloginLoginButton}`).should('be.visible')
   });
 
   it('test app (de)activation', () => {
@@ -169,7 +172,7 @@ describe('admin related eID stuff', () => {
     cy.get('.toast-close').click({ multiple: true });
     // check if button is not visible
     cy.logout();
-    cy.get('.eidlogin-login-button').should('not.exist')
+    cy.get(`${eidloginLoginButton}`).should('not.exist')
     cy.login('admin','adminP396');
     cy.visit('/settings/admin/eidlogin');
     // activate app
@@ -178,7 +181,7 @@ describe('admin related eID stuff', () => {
     cy.get('.toast-close').click({ multiple: true });
     // check if button is visible
     cy.logout();
-    cy.get('.eidlogin-login-button').should('be.visible')
+    cy.get(`${eidloginLoginButton}`).should('be.visible')
   });
 
   it('test manual config with form value validation', () => {
@@ -280,7 +283,7 @@ describe('admin related eID stuff', () => {
     cy.get('.toast-close').click({ multiple: true });
     // logout and check for eID-Login button
     cy.logout();
-    cy.get('.eidlogin-login-button').should('be.visible')
+    cy.get(`${eidloginLoginButton}`).should('be.visible')
   });
 
   /*
@@ -292,7 +295,7 @@ describe('admin related eID stuff', () => {
     cy.get('#body-settings > div.oc-dialog > div.oc-dialog-buttonrow.twobuttons > button.error.primary').click()
     cy.get(`${prefix}wizard`).should('be.visible')
     cy.logout();
-    cy.get('.eidlogin-login-button').should('not.exist')
+    cy.get(`${eidloginLoginButton}`).should('not.exist')
   });
 
   it('certificate rollover', () => {
@@ -325,7 +328,7 @@ describe('admin related eID stuff', () => {
     cy.get(`${prefix}manual-div-cert-new`).contains('...').should('not.exist')
     cy.get(`${prefix}manual-div-cert-new-enc`).contains('...').should('not.exist')
     cy.logout();
-    cy.get('.eidlogin-login-button').should('be.visible')
+    cy.get(`${eidloginLoginButton}`).should('be.visible')
   });
   */
 });

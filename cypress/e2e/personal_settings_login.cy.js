@@ -24,14 +24,6 @@ describe('user related eID stuff', () => {
     cy.deleteUser(username, password);
     cy.createUser(username, password);
     cy.login(username,password);
-    cy.waitUntil(() => cy.get('#firstrunwizard button.icon-close').then($button => {
-      $button.is(':visible')
-    }), {
-      interval: 1000
-    });
-    cy.intercept('DELETE','/apps/firstrunwizard/wizard').as('closeFirstRunWizard')
-    cy.get('#firstrunwizard button.icon-close').click({force: true})
-    cy.wait('@closeFirstRunWizard')
     cy.logout();
   })
 

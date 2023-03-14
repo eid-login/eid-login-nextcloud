@@ -11,6 +11,6 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       return require('./cypress/plugins/index.js')(on, config)
     },
-    baseUrl: 'https://nextcloud25.p396.de',
+    baseUrl: 'https://nextcloud26.p396.de',
   },
 })

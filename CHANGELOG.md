@@ -6,6 +6,12 @@
 ### Fixed
 ### Security
 
+## 1.0.12 – 2023-03-14
+### Added
+- Support for Nextcloud 26
+### Removed
+- Support for Nextcloud 23
+
 ## 1.0.11 – 2022-10-11
 ### Changed
 - Fix wrong version number

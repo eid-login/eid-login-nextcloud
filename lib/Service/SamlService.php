@@ -45,6 +45,23 @@ class SamlService {
 	}
 
 	/**
+	 * Call the given function with a modified XML entity loader and return the
+	 * result (from https://github.com/nextcloud/user_saml).
+	 *
+	 * @returns mixed returns the result of the callable parameter
+	 */
+	private function callWithXmlEntityLoader(callable $func) {
+		libxml_set_external_entity_loader(static function ($public, $system) {
+			return $system;
+		});
+		$result = $func();
+		libxml_set_external_entity_loader(static function () {
+			return null;
+		});
+		return $result;
+	}
+
+	/**
 	 * Get Service Provider SAML Metadata.
 	 *
 	 * @return String
@@ -53,7 +70,11 @@ class SamlService {
 	public function getSpSamlMetadata() : String {
 		$settings = new Settings($this->getSamlSettings(), true);
 		$metadata = $settings->getSPMetadata();
-		$errors = $settings->validateMetadata($metadata);
+
+		$errors = $this->callWithXmlEntityLoader(function () use ($settings, $metadata) {
+			return $settings->validateMetadata($metadata);
+		});
+
 		if (!empty($errors)) {
 			throw new Error('Invalid SP metadata: '.implode(', ', $errors), Error::METADATA_SP_INVALID);
 		}

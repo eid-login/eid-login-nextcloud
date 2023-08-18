@@ -6,6 +6,12 @@
 ### Fixed
 ### Security
 
+## 1.0.14 – 2023-08-18
+### Fixed
+- Fix loading and validating of XML for SP metadata and SAML response
+### Changed
+- Update dependencies
+
 ## 1.0.13 – 2023-06-14
 ### Added
 - Support for Nextcloud 27

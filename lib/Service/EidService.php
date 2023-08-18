@@ -4,7 +4,7 @@
  * later. See the COPYING file.
  *
  * @author tobias.assmann@ecsec.de
- * @copyright ecsec 2020
+ * @copyright ecsec 2023
  */
 namespace OCA\EidLogin\Service;
 
@@ -18,6 +18,7 @@ use OCA\EidLogin\Db\EidContinueData;
 use OCA\EidLogin\Db\EidContinueDataMapper;
 use OCA\EidLogin\Db\EidResponseData;
 use OCA\EidLogin\Db\EidResponseDataMapper;
+use OCA\EidLogin\Helper\XmlHelper;
 use OCP\AppFramework\Http\RedirectResponse;
 use OCP\IRequest;
 use OCP\IUserManager;
@@ -36,6 +37,8 @@ use Ecsec\Eidlogin\Dep\OneLogin\Saml2\Utils;
  * @package OCA\EidLogin\Service
  */
 class EidService {
+
+	use XmlHelper;
 
 	/** @var ISession */
 	private $session;
@@ -397,7 +400,10 @@ class EidService {
 		$eid = null;
 		$attributesAsXML = [];
 		try {
-			$auth->processCreatedResponse($response);
+			$this->callWithXmlEntityLoader(function () use ($auth, $response) {
+				return $auth->processCreatedResponse($response);
+			});
+
 			// fetch errors
 			$errors = $auth->getErrors();
 			if (count($errors) === 0) {

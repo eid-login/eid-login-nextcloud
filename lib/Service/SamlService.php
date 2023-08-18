@@ -4,7 +4,7 @@
  * later. See the COPYING file.
  *
  * @author tobias.assmann@ecsec.de
- * @copyright ecsec 2020
+ * @copyright ecsec 2023
  */
 namespace OCA\EidLogin\Service;
 
@@ -13,6 +13,7 @@ use Ecsec\Eidlogin\Dep\OneLogin\Saml2\Settings;
 use Ecsec\Eidlogin\Dep\OneLogin\Saml2\Error;
 use Ecsec\Eidlogin\Dep\OneLogin\Saml2\Utils;
 use Ecsec\Eidlogin\Dep\OneLogin\Saml2\IdPMetadataParser;
+use OCA\EidLogin\Helper\XmlHelper;
 use OCP\IURLGenerator;
 
 /**
@@ -21,6 +22,8 @@ use OCP\IURLGenerator;
  * @package OCA\EidLogin\Service
  */
 class SamlService {
+
+	use XmlHelper;
 
 	/** @var IConfig */
 	private $config;
@@ -42,23 +45,6 @@ class SamlService {
 			$utils = new Utils();
 			$utils->setProxyVars(true);
 		}
-	}
-
-	/**
-	 * Call the given function with a modified XML entity loader and return the
-	 * result (from https://github.com/nextcloud/user_saml).
-	 *
-	 * @returns mixed returns the result of the callable parameter
-	 */
-	private function callWithXmlEntityLoader(callable $func) {
-		libxml_set_external_entity_loader(static function ($public, $system) {
-			return $system;
-		});
-		$result = $func();
-		libxml_set_external_entity_loader(static function () {
-			return null;
-		});
-		return $result;
 	}
 
 	/**

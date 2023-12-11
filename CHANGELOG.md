@@ -6,6 +6,15 @@
 ### Fixed
 ### Security
 
+## 1.0.15 – 2023-12-11
+### Added
+- Support for Nextcloud 28
+### Removed
+- Support for Nextcloud 25
+### Changed
+- Update dependencies
+- CSS login button
+
 ## 1.0.14 – 2023-08-18
 ### Fixed
 - Fix loading and validating of XML for SP metadata and SAML response

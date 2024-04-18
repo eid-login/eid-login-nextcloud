@@ -33,7 +33,7 @@
 		"eslint": "^7.26.0",
 		"eslint-plugin-nextcloud": "^0.3.0",
 		"fast-xml-parser": "^4.2.4",
-		"mysql2": "^2.2.5",
+		"mysql2": ">=3.9.4",
 		"sass": "^1.38.2",
 		"sass-loader": "^12.1.0",
 		"style-loader": "^3.2.1",

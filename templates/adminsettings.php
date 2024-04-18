@@ -199,18 +199,18 @@ $tr03130Placeholder = '<?xml version="1.0" encoding="UTF-8"?>
 				</ol>
 			</div>
 			<div class="row">
-				<div class="col-10"></div>
-				<div class="col-2">
+				<div class="col-8"></div>
+				<div class="col-4">
 					<p class="right"><button id="eidlogin-settings-button-select-skid" data-panel="3"><?php p($l->t('Continue with SkIDentity')); ?></button></p>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-10">
+				<div class="col-8">
 					<p class="left">
 						<?php p($l->t('Please click on the (?) icon for help regarding the setup or more information.')); ?>
 					</p>
 				</div>
-				<div class="col-2">
+				<div class="col-4">
 					<p class="right"><button id="eidlogin-settings-button-next-2" data-panel="2"><?php p($l->t('Continue with another IdP')); ?></button></p>
 				</div>
 			</div>
@@ -383,7 +383,7 @@ $tr03130Placeholder = '<?xml version="1.0" encoding="UTF-8"?>
 					<?php p($l->t(' or ')); ?>
 					<a target="_blank" href="https://www.ausweisapp.bund.de/ausweisapp2/">AusweisApp2</a>).
 					<?php p($l->t('After establishing the connection the eID-Login can be used with the button on the login page.')); ?>
-				</p>	
+				</p>
 			</div>
 			<div class="row">
 				<p class="center">

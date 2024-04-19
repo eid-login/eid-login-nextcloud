@@ -6,6 +6,15 @@
 ### Fixed
 ### Security
 
+## 1.0.16 – 2024-04-19
+### Added
+- Support for Nextcloud 29
+### Removed
+- Support for Nextcloud 26
+### Changed
+- Update dependencies
+- Increase button size in wizard
+
 ## 1.0.15 – 2023-12-11
 ### Added
 - Support for Nextcloud 28

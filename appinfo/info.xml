@@ -6,7 +6,7 @@
     <summary>Integration of mobile electronic identities at a substantial security level</summary>
     <description lang="en"><![CDATA[The eID-Login App allows to use the German eID-card and similar electronic identity documents for secure and privacy-friendly login to Nextcloud. For this purpose, a so-called eID-Client, such as the AusweisApp2 or the Open eCard App and eID-Service are required. In the default configuration a suitable eID-Service is provided without any additional costs.]]></description>
     <description lang="de"><![CDATA[Mit der eID-Login App kann die Online-Ausweisfunktion (u.a. vom Personalausweis) für eine sichere und datenschutzfreundliche Anmeldung an Nextcloud verwendet werden. Hierfür wird auf dem System des Benutzers ein so genannter eID-Client, wie z.B. die AusweisApp2 oder die Open eCard App, und ein eID-Service benötigt. In der Standardkonfiguration steht ein geeigneter eID-Service kostenfrei zur Verfügung.]]></description>
-    <version>1.0.16</version>
+    <version>1.0.17</version>
     <licence>agpl</licence>
     <author mail="eID-Login@ecsec.de" homepage="https://ecsec.de">ecsec GmbH</author>
     <documentation>
@@ -22,7 +22,7 @@
     <namespace>EidLogin</namespace>
     <category>security</category>
     <dependencies>
-        <nextcloud min-version="27" max-version="29"/>
+        <nextcloud min-version="28" max-version="30"/>
         <php min-version="7.4" min-int-size="64"/>
         <lib>openssl</lib>
         <database min-version="11.9">pgsql</database>

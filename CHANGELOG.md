@@ -6,6 +6,15 @@
 ### Fixed
 ### Security
 
+## 1.0.17 – 2024-09-11
+### Added
+- Support for Nextcloud 30
+### Removed
+- Support for Nextcloud 27
+### Changed
+- Update npm dependencies
+- Adjust CSS for Nextcloud 30
+
 ## 1.0.16 – 2024-04-19
 ### Added
 - Support for Nextcloud 29

@@ -79,12 +79,19 @@
   max-height: 100%;
 }
 #eidlogin-settings-button-help {
-  border-color: #dbdbdb !important;
   border-radius: 60%;
   cursor: pointer;
   float: right;
   position: relative;
   top: -3em;
+}
+
+#eidlogin-settings-wizard-panel-help h3 {
+  margin-left:20px;
+}
+
+#eidlogin-settings-wizard-panel-help h4 {
+  margin-top: 5px;
 }
 
 #eidlogin-settings-wizard .panel a {
@@ -93,6 +100,11 @@
 }
 #eidlogin-settings-button-help.active {
   background-color: #008cd0 !important;
+}
+
+#eidlogin-settings-wizard button,
+#eidlogin-settings-manual button {
+  padding: 5px 15px;
 }
 
 #eidlogin-settings-wizard .panel {

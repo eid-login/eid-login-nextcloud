@@ -168,7 +168,10 @@ class Notifier implements INotifier {
 		$notification->setApp('eidlogin');
 		$notification->setObject('eidlogin', 'eidlogin_setup_done');
 		$notification->setSubject('eidlogin_setup_done');
-		$notification->setIcon($this->urlGenerator->imagePath('eidlogin', 'app-dark.svg'));
+		$iconPath = $this->urlGenerator->imagePath('eidlogin', 'app-dark.svg');
+		// Make sure to use absolute URLs, so that the notification icon and link also work from the desktop and mobile clients.
+		$iconPathAbs = $this->urlGenerator->getAbsoluteURL($iconPath);
+		$notification->setIcon($iconPathAbs);
 		// iterate users
 		foreach ($users as $user) {
 			// no notification for current user

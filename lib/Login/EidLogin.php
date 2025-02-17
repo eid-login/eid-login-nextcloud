@@ -8,6 +8,7 @@
  */
 namespace OCA\EidLogin\Login;
 
+use Psr\Log\LoggerInterface;
 use OCP\IL10N;
 use OCP\IURLGenerator;
 use OCP\Util;
@@ -19,6 +20,8 @@ use OC\Security\CSRF\CsrfTokenManager;
  */
 class EidLogin implements IAlternativeLogin {
 
+	/** @var LoggerInterface */
+	private $logger;
 	/** @var IUrlGenerator */
 	private $urlGenerator;
 	/** @var IL10N */
@@ -27,15 +30,18 @@ class EidLogin implements IAlternativeLogin {
 	private $csrfTokenManager;
 
 	/**
+	 * @param LoggerInterface $logger
 	 * @param IURLGenerator $urlGenerator
 	 * @param IL10N $l10n
 	 * @param CsrfTokenManager $csrfTokenManager
 	 */
 	public function __construct(
+			LoggerInterface $logger,
 			IURLGenerator $urlGenerator,
 			IL10N $l10n,
 			CsrfTokenManager $csrfTokenManager
 		) {
+		$this->logger = $logger;
 		$this->urlGenerator = $urlGenerator;
 		$this->l10n = $l10n;
 		$this->csrfTokenManager = $csrfTokenManager;
@@ -74,10 +80,6 @@ class EidLogin implements IAlternativeLogin {
 	 * Load necessary resources to present the login option, e.g. style-file to style the getClass()
 	 */
 	public function load() :void {
-		if (substr(\OC_Util::getVersionString(), 0, 2) < '22') {
-			Util::addStyle('eidlogin', 'eidlogin-login-old');
-		} else {
-			Util::addStyle('eidlogin', 'eidlogin-login');
-		}
+		Util::addStyle('eidlogin', 'eidlogin-login');
 	}
 }

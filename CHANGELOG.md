@@ -6,6 +6,15 @@
 ### Fixed
 ### Security
 
+## 1.0.18 – 2025-02-17
+### Added
+- Support for Nextcloud 31
+### Removed
+- Support for Nextcloud 28
+### Changed
+- Update npm dependencies
+- Remove obsolete method OC_Util::getVersionString()
+
 ## 1.0.17 – 2024-09-11
 ### Added
 - Support for Nextcloud 30

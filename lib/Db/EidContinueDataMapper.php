@@ -54,8 +54,8 @@ class EidContinueDataMapper extends QBMapper {
 		   ->where(
 			   $qb->expr()->eq('uid', $qb->createNamedParameter($uid, IQueryBuilder::PARAM_STR))
 		   );
-		$qb->execute();
-		
+		$qb->executeStatement();
+
 		return;
 	}
 
@@ -70,8 +70,8 @@ class EidContinueDataMapper extends QBMapper {
 		   ->where(
 			   $qb->expr()->lt('time', $qb->createNamedParameter($limit, IQueryBuilder::PARAM_INT))
 		   );
-		$qb->execute();
-		
+		$qb->executeStatement();
+
 		return;
 	}
 
@@ -81,8 +81,8 @@ class EidContinueDataMapper extends QBMapper {
 	public function deleteAll() : void {
 		$qb = $this->db->getQueryBuilder();
 		$qb->delete($this->tableName);
-		$qb->execute();
-		
+		$qb->executeStatement();
+
 		return;
 	}
 }

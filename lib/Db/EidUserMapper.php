@@ -90,7 +90,7 @@ class EidUserMapper extends QBMapper {
 		   ->where(
 			   $qb->expr()->eq('uid', $qb->createNamedParameter($uid, IQueryBuilder::PARAM_STR))
 		   );
-		$stmt = $qb->execute();
+		$stmt = $qb->executeQuery();
 		$row = $stmt->fetch();
 		$stmt->closeCursor();
 
@@ -117,8 +117,8 @@ class EidUserMapper extends QBMapper {
 		   ->where(
 			   $qb->expr()->eq('uid', $qb->createNamedParameter($uid, IQueryBuilder::PARAM_STR))
 		   );
-		$qb->execute();
-		
+		$qb->executeStatement();
+
 		return;
 	}
 
@@ -128,8 +128,8 @@ class EidUserMapper extends QBMapper {
 	public function deleteAll() : void {
 		$qb = $this->db->getQueryBuilder();
 		$qb->delete($this->tableName);
-		$qb->execute();
-		
+		$qb->executeStatement();
+
 		return;
 	}
 }

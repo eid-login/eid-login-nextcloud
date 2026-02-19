@@ -245,7 +245,7 @@ class Notifier implements INotifier {
 			->from('group_user')
 			->where($qb->expr()->eq('gid', $qb->createNamedParameter('admin')));
 
-		$stmt = $qb->execute();
+		$stmt = $qb->executeQuery();
 		while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
 			$uids[] = $row['uid'];
 		}

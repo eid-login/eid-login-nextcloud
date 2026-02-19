@@ -6,6 +6,15 @@
 ### Fixed
 ### Security
 
+## 1.0.20 – 2026-02-20
+### Added
+- Support for Nextcloud 33
+### Removed
+- Support for Nextcloud 30
+### Changed
+- Replace deprecated method \OCP\DB\IQueryBuilder::execute
+- Update npm dependencies
+
 ## 1.0.19 – 2025-09-26
 ### Added
 - Support for Nextcloud 32

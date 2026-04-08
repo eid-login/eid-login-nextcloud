@@ -9,12 +9,12 @@
         }
     ],
     "config": {
-      "discard-changes": true
+        "discard-changes": true
     },
     "autoload": {
-      "psr-4": {
-        "Ecsec\\Eidlogin\\Dep\\": "dep"
-      }
+        "psr-4": {
+            "Ecsec\\Eidlogin\\Dep\\": "dep"
+        }
     },
     "require": {
         "eid-login/php-saml": "^1.1.0"

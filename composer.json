@@ -17,7 +17,7 @@
         }
     },
     "require": {
-        "eid-login/php-saml": "^1.1.0"
+        "eid-login/php-saml": "^1.2.0"
     },
     "require-dev": {
         "nextcloud/coding-standard": "^1.0",

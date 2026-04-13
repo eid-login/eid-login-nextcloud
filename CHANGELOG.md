@@ -6,6 +6,11 @@
 ### Fixed
 ### Security
 
+## 1.0.21 – 2026-04-13
+### Changed
+- Use eid-login/php-saml version 1.2.0 with updates of xmlseclibs and phpseclib3
+- Update npm dependencies
+
 ## 1.0.20 – 2026-02-20
 ### Added
 - Support for Nextcloud 33

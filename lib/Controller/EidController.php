@@ -72,7 +72,7 @@ class EidController extends Controller {
 	 *
 	 * @return RedirectResponse
 	 */
-	public function loginEid(string $redirect_url = null) {
+	public function loginEid(?string $redirect_url = null) {
 		// go to base url if no redirect url is given
 		if (is_null($redirect_url)) {
 			$redirect_url = $this->urlGenerator->getBaseUrl();

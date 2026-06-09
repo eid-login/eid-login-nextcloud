@@ -28,6 +28,7 @@ use OCP\IUser;
 use OCP\IConfig;
 use OCP\IURLGenerator;
 use OCP\IL10N;
+use OCP\Security\ISecureRandom;
 use Ecsec\Eidlogin\Dep\OneLogin\Saml2\Auth;
 use Ecsec\Eidlogin\Dep\OneLogin\Saml2\Utils;
 
@@ -60,6 +61,8 @@ class EidService {
 	private $config;
 	/** @var IURLGenerator */
 	private $urlGenerator;
+	/** @var ISecureRandom */
+	private $secureRandom;
 	/** @var IL10N */
 	private $l10n;
 	/** * @var SamlService */
@@ -103,6 +106,7 @@ class EidService {
 	 * @param LoggerInterface $logger
 	 * @param IConfig $config
 	 * @param IURLGenerator $urlGenerator
+	 * @param ISecureRandom $secureRandom
 	 * @param IL10N $l10n
 	 * @param SamlService $samlService
 	 */
@@ -117,6 +121,7 @@ class EidService {
 			LoggerInterface $logger,
 			IConfig $config,
 			IURLGenerator $urlGenerator,
+			ISecureRandom $secureRandom,
 			IL10N $l10n,
 			SamlService $samlService
 		) {
@@ -130,6 +135,7 @@ class EidService {
 		$this->logger = $logger;
 		$this->config = $config;
 		$this->urlGenerator = $urlGenerator;
+		$this->secureRandom = $secureRandom;
 		$this->l10n = $l10n;
 		$this->samlService = $samlService;
 		$this->uid = '';
@@ -237,9 +243,10 @@ class EidService {
 			throw new \Exception('$uid of EidService is null, could not determine user for which to start create SAML Flow!');
 		}
 		// the requestId
-		$reqId = "eidlogin_".\OC::$server->getSecureRandom()->generate(24, self::CHARS_RANDOM);
+		$reqId = "eidlogin_".$this->secureRandom->generate(24, ISecureRandom::CHAR_ALPHANUMERIC);
+
 		// the cookieId
-		$cookieId = "eidlogin_".\OC::$server->getSecureRandom()->generate(24, self::CHARS_RANDOM);
+		$cookieId = "eidlogin_".$this->secureRandom->generate(24, ISecureRandom::CHAR_ALPHANUMERIC);
 		// setcookie(self::COOKIE_NAME, $cookieId, time() + 60 * 5, '/', '', true, true);
 		setcookie(self::COOKIE_NAME, $cookieId, [
 			'expires' => time()+60*5,
@@ -432,7 +439,7 @@ class EidService {
 			$errors[] = $e->getMessage();
 		}
 		// build response data
-		$responseId = \OC::$server->getSecureRandom()->generate(24, self::CHARS_RANDOM);
+		$responseId = $this->secureRandom->generate(24, ISecureRandom::CHAR_ALPHANUMERIC);
 		$responseData = [
 			'isAuthenticated' => $auth->isAuthenticated(),
 			'lastErrorException' => $auth->getLastErrorException(),

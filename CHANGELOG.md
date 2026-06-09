@@ -6,6 +6,12 @@
 ### Fixed
 ### Security
 
+## 1.0.22 – 2026-06-09
+### Changed
+- Replace deprecated function getSecureRandom
+- Update phpseclib to 3.0.52
+- Update npm dependencies
+
 ## 1.0.21 – 2026-04-13
 ### Changed
 - Use eid-login/php-saml version 1.2.0 with updates of xmlseclibs and phpseclib3

@@ -7,6 +7,10 @@
 ### Security
 
 ## 1.0.22 – 2026-06-09
+### Added
+- Support for Nextcloud 34
+### Removed
+- Support for Nextcloud 31
 ### Changed
 - Replace deprecated function getSecureRandom
 - Update phpseclib to 3.0.52

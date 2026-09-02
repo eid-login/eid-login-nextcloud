@@ -18,6 +18,7 @@ use OCP\IDBConnection;
 use OCP\Notification\IManager;
 use OCP\Notification\INotifier;
 use OCP\Notification\INotification;
+use OCP\Notification\UnknownNotificationException;
 use OCA\Notifications\Handler;
 
 /**
@@ -102,7 +103,7 @@ class Notifier implements INotifier {
 	 */
 	public function prepare(INotification $notification, string $languageCode): INotification {
 		if ($notification->getApp() !== 'eidlogin') {
-			throw new \InvalidArgumentException('got notification with wrong app: '.$notification->getApp());
+			throw new UnknownNotificationException('got notification with wrong app: '.$notification->getApp());
 		}
 		// read the language from the notification
 		$l = $this->l10nFactory->get('eidlogin', $languageCode);
@@ -139,7 +140,7 @@ class Notifier implements INotifier {
 				break;
 			default:
 				// Unknown subject => Unknown notification => throw
-				throw new \InvalidArgumentException('got notification with unknown subject: '.$notification->getSubject());
+				throw new UnknownNotificationException('got notification with unknown subject: '.$notification->getSubject());
 		}
 
 		return $notification;

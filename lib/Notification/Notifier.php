@@ -19,7 +19,6 @@ use OCP\Notification\IManager;
 use OCP\Notification\INotifier;
 use OCP\Notification\INotification;
 use OCP\Notification\UnknownNotificationException;
-use OCA\Notifications\Handler;
 
 /**
  * Notifier for the eID-Login app.
@@ -44,8 +43,6 @@ class Notifier implements INotifier {
 	private $db;
 	/** @var IManager */
 	private $notificationManager;
-	/** @var Handler */
-	private $handler;
 
 	/**
 	 * @param IFactory $l10nFactory
@@ -55,7 +52,6 @@ class Notifier implements INotifier {
 	 * @param LoggerInterface $logger
 	 * @param IDBConnection $dbConnection,
 	 * @param IManager $notificationManager
-	 * @param Handler $handler
 	 */
 	public function __construct(
 			IFactory $l10nFactory,
@@ -64,8 +60,7 @@ class Notifier implements INotifier {
 			IUserManager $userManager,
 			LoggerInterface $logger,
 			IDBConnection $db,
-			IManager $notificationManager,
-			Handler $handler
+			IManager $notificationManager
 		) {
 		$this->l10nFactory = $l10nFactory;
 		$this->urlGenerator = $urlGenerator;
@@ -74,7 +69,6 @@ class Notifier implements INotifier {
 		$this->logger = $logger;
 		$this->db = $db;
 		$this->notificationManager = $notificationManager;
-		$this->handler = $handler;
 	}
 
 	/**
@@ -181,8 +175,7 @@ class Notifier implements INotifier {
 			}
 			// no new notification, if it is already set for user
 			$notification->setUser($user->getUID());
-			$notifications = $this->handler->get($notification);
-			if (count($notifications) !== 0) {
+			if ($this->notificationManager->getCount($notification) !== 0) {
 				$this->logger->debug('found eidlogin_setup_done notification for user '.$user->getUID().'; wont create another');
 				continue;
 			}
@@ -212,8 +205,7 @@ class Notifier implements INotifier {
 			$notification->setIcon($this->urlGenerator->imagePath('eidlogin', 'app-dark.svg'));
 			// no new notification, if it is already set for user
 			$notification->setUser($uid);
-			$notifications = $this->handler->get($notification);
-			if (count($notifications) !== 0) {
+			if ($this->notificationManager->getCount($notification) !== 0) {
 				$this->logger->debug('found eidlogin_autoconfigure notification for user '.$uid.'; wont create another');
 				continue;
 			}

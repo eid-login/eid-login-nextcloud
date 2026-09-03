@@ -22,7 +22,7 @@
     <namespace>EidLogin</namespace>
     <category>security</category>
     <dependencies>
-        <nextcloud min-version="32" max-version="34"/>
+        <nextcloud min-version="33" max-version="35"/>
         <php min-version="7.4" min-int-size="64"/>
         <lib>openssl</lib>
         <database min-version="11.9">pgsql</database>

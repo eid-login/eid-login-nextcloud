@@ -21,7 +21,7 @@ return [
 		['name' => 'eid#createEid', 'url' => '/eid/createeid', 'verb' => 'GET'],
 		['name' => 'eid#tcToken', 'url' => '/eid/tctoken/{id}', 'verb' => 'GET'],
 		['name' => 'eid#loginEid', 'url' => '/eid/logineid', 'verb' => 'GET'],
-		['name' => 'eid#resume', 'url' => '/eid/resume/[id}', 'verb' => 'GET'],
+		['name' => 'eid#resume', 'url' => '/eid/resume/{id}', 'verb' => 'GET'],
 		['name' => 'saml#meta', 'url' => '/saml/meta', 'verb' => 'GET'],
 		['name' => 'saml#acsPost', 'url' => '/saml/acs', 'verb' => 'POST'],
 		['name' => 'saml#acsRedirect', 'url' => '/saml/acs', 'verb' => 'GET'],

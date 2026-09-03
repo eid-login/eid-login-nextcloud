@@ -13,7 +13,7 @@ if ($l->getLanguageCode() !== "en") {
 	<?php if ($_['activated']) { ?>
 		<span id="eidlogin-settings-span-user-has-eid" class="hidden" data-user-has-eid="<?php p($_['user_has_eid']); ?>"></span>
 		<span id="eidlogin-settings-span-saml-result" class="hidden" data-saml-result="<?php p($_['saml_result']);?>"></span>
-		<span id="eidlogin-settings-span-saml-msg" class="hidden" data-saml-msg="<?php p($l->t($_['saml_msg']));?>"></span>
+		<span id="eidlogin-settings-span-saml-msg" class="hidden" data-saml-msg="<?php p($_['saml_msg']);?>"></span>
 		<span id="eidlogin-settings-span-hint-create" class="hidden">
 			<?php p($l->t("Your account is currently not connected to your eID. Create a connection to use your German eID ('Personalausweis') or another eID for the login to Nextcloud. More information can be found in the "));?>
 			<a target="_blank" href="<?php p($faqURL); ?>">FAQ</a>.

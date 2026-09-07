@@ -6,6 +6,17 @@
 ### Fixed
 ### Security
 
+## 1.0.23 – 2026-09-XX
+### Added
+- Support for Nextcloud 35
+### Removed
+- Support for Nextcloud 32
+### Changed
+- Drop the hard dependency on the notifications app (by @mband008)
+- Do not translate the stored SAML message (by @mband008)
+- Fix typo in resume route (by @mband008)
+- Update npm dependencies
+
 ## 1.0.22 – 2026-06-09
 ### Added
 - Support for Nextcloud 34

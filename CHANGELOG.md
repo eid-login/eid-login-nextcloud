@@ -6,7 +6,7 @@
 ### Fixed
 ### Security
 
-## 1.0.23 – 2026-09-XX
+## 1.0.23 – 2026-09-07
 ### Added
 - Support for Nextcloud 35
 ### Removed
